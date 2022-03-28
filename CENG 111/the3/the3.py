@@ -1,3 +1,5 @@
+# Created by Kaan Karaçanta, 2021
+
 # This function creates nested lists and gives the tree's final form.
 def tree_creator(x):
     if len(x) == 1:
