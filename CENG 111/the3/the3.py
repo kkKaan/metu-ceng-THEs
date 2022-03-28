@@ -57,7 +57,8 @@ def makeTheRootFirst(lst, pre_tree, a):
                 pre_tree.append(k)
                 lst.remove(k)
                 break
-            continue    
+            continue 
+            
     return makeTheRootFirst(lst, pre_tree, a+1)
 
 
