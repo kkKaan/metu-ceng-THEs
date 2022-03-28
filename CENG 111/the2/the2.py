@@ -105,5 +105,5 @@ def new_move_helper(people_list):
         population+=1
 
     global people
-    people=universal_state
+    people = universal_state
     return universal_state 
