@@ -1,3 +1,4 @@
+# Created by Kaan Karaçanta, 2020
 import math
 import random
 from evaluator import *   
