@@ -1,3 +1,5 @@
+// Created by Kaan Karaçanta, 2021
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "the3.h"
