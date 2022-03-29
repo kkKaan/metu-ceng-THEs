@@ -1,3 +1,5 @@
+// Created by Kaan Karaçanta, 2021
+
 #include <stdio.h>
 #define ROW 25
 #define COLUMN 25
