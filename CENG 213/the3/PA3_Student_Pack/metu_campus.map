@@ -1,0 +1,61 @@
+# Vertices
+A1_Gate
+A2_Gate
+A4_Gate
+A7_Gate
+#
+Kolej
+Teknokent
+Modsim
+Tekno_A8
+#
+3 Kolej A7_Gate
+2 Kolej A2_Gate
+4 Kolej Tekno_A8
+5 Tekno_A8 Teknokent
+6 Tekno_A8 Modsim
+3 Modsim Teknokent
+2 Teknokent A7_Gate
+#
+ODTUKent
+Demiray
+Aero
+Mosque
+YP
+Threeway
+#
+3 Modsim ODTUKent
+4 Demiray ODTUKent
+5 YP ODTUKent
+2 Demiray Aero
+9 Aero Mosque
+3 Mosque Threeway
+2 Threeway YP
+#
+Civil
+Ceng
+C_Statue
+Lib_I
+FL_I
+EE
+Library
+FL
+Mechanical
+#
+3 Civil Threeway
+2 Civil Ceng
+5 Ceng EE
+3 Ceng C_Statue
+5 EE Modsim
+2 YP Mechanical
+7 Mechanical EE
+2 EE Library
+4 Library FL
+2 FL Tekno_A8
+3 Library Lib_I
+8 C_Statue A4_Gate
+2 C_Statue Lib_I
+2 Lib_I FL_I
+3 FL FL_I
+2 FL_I A1_Gate
+
