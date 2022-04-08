@@ -70,18 +70,9 @@ averageStepsInSuccess :: [[Point]] -> Dimensions -> [Point] -> Double
 averageStepsInSuccess paths border objects = getRounded ((castIntToDouble noSteps) / (castIntToDouble noSuccPaths))
     where 
         succPaths = [ x | x <- paths, (remainingObjects x border objects == []) && (length x == length (takePathInArea x border))]
-        stepLenOfPaths = [ length x | x <- succPaths]
-        noSteps = sum stepLenOfPaths
+        noSteps = sum [ length x | x <- succPaths]
         noSuccPaths = length succPaths
+        --stepLenOfPaths = [ length x | x <- succPaths]
         -- noSuccPaths = length [ x | x <- paths, length (remainingObjects x border objects) == 0]
-
-
-
-
-
-
-
-
-
 
 
