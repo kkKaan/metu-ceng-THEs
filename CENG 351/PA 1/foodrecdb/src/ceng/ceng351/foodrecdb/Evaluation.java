@@ -16,10 +16,10 @@ import java.util.Vector;
 
 public class Evaluation {
 
-    private static String user = "e2448546"; // TODO: Your userName
-    private static String password = "38DkqW2MT-SKc2rH"; //  TODO: Your password
+    private static String user = ""; // TODO: Your userName
+    private static String password = ""; //  TODO: Your password
     private static String host = "momcorp.ceng.metu.edu.tr"; // host name
-    private static String database = "db2448546"; // TODO: Your database name
+    private static String database = "db"; // TODO: Your database name
     private static int port = 8080; // port
     
     private static Connection connection = null;
