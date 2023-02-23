@@ -8,10 +8,10 @@ import java.sql.Statement;
 
 public class FOODRECDB implements IFOODRECDB
 {
-    private static String user = "e2448546";// username;
-    private static String password = "38DkqW2MT-SKc2rH"; //  TODO: Your password
+    private static String user = "";// username;
+    private static String password = ""; //  TODO: Your password
     private static String host = "momcorp.ceng.metu.edu.tr"; // host name
-    private static String database = "db2448546"; // TODO: Your database name
+    private static String database = "dbe1234567"; // TODO: Your database name
     private static int port = 8080; // port
 
     private Connection connection;
