@@ -11,7 +11,7 @@ public class FOODRECDB implements IFOODRECDB
     private static String user = "";// username;
     private static String password = ""; //  TODO: Your password
     private static String host = "momcorp.ceng.metu.edu.tr"; // host name
-    private static String database = "dbe1234567"; // TODO: Your database name
+    private static String database = "db"; // TODO: Your database name
     private static int port = 8080; // port
 
     private Connection connection;
@@ -492,7 +492,6 @@ public class FOODRECDB implements IFOODRECDB
                        "from MenuItems m, Includes inc, DietaryCategories d " +
                        "where m.itemID = inc.itemID " +
                        "and inc.ingredientID = d.ingredientID " +
-                       // "and d.ingredientID = ing.ingredientID " + ??????????????????????????
                        "and d.dietaryCategory = '" + category + "' " +
                        "group by m.itemID " +
                        "having count(*) = (select count(*) from Includes where itemID = m.itemID) " +
@@ -708,7 +707,6 @@ public class FOODRECDB implements IFOODRECDB
         Rating[] res = null;
         int n=0;
 
-        // String query1 = "select from Ratings r where cast(r.ratingDate as date) < cast('"+date+"' as date);";
         String query1 = "select * from Ratings r where r.ratingDate < '"+date+"'; ";
         String query2 = "delete from Ratings r where r.ratingDate < '"+date+"'; ";
 
