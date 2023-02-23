@@ -1,0 +1,10 @@
+101	Veggie Noodles	Chinese	64
+102	Lemon Pasta	Italian	59
+103	Fresh Quinoa Salad	World	39
+104	Pasta Napoletana	Italian	54
+105	Shrimp Fried Rice	Chinese	59
+106	Oven-baked Salmon	World	89
+107	Bell Pepper Dolma	Turkish	49
+108	Mushroom Stew	World	54
+109	Pad Thai	Thai	64
+110	Tiramisu	Italian	44
