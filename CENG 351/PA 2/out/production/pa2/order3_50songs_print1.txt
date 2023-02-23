@@ -1,0 +1,107 @@
+<index>
+13
+25
+37
+</index>
+	<index>
+	4
+	7
+	10
+	</index>
+		<data>
+		<record>1|canadian pop|Señorita|Shawn Mendes</record>
+		<record>2|reggaeton flow|China|Anuel AA</record>
+		<record>3|dance pop|boyfriend (with Social House)|Ariana Grande</record>
+		</data>
+		<data>
+		<record>4|pop|Beautiful People (feat. Khalid)|Ed Sheeran</record>
+		<record>5|dfw rap|Goodbyes (Feat. Young Thug)|Post Malone</record>
+		<record>6|pop|I Don't Care (with Justin Bieber)|Ed Sheeran</record>
+		</data>
+		<data>
+		<record>7|trap music|Ransom|Lil Tecca</record>
+		<record>8|pop|How Do You Sleep?|Sam Smith</record>
+		<record>9|country rap|Old Town Road - Remix|Lil Nas X</record>
+		</data>
+		<data>
+		<record>10|electropop|bad guy|Billie Eilish</record>
+		<record>11|reggaeton|Callaita|Bad Bunny</record>
+		<record>12|dance pop|Loco Contigo (feat. J. Balvin & Tyga)|DJ Snake</record>
+		</data>
+	<index>
+	16
+	19
+	22
+	</index>
+		<data>
+		<record>13|pop|Someone You Loved|Lewis Capaldi</record>
+		<record>14|panamanian pop|Otro Trago - Remix|Sech</record>
+		<record>15|canadian hip hop|Money In The Grave (Drake ft. Rick Ross)|Drake</record>
+		</data>
+		<data>
+		<record>16|dance pop|No Guidance (feat. Drake)|Chris Brown</record>
+		<record>17|latin|LA CANCIÓN|J Balvin</record>
+		<record>18|dfw rap|Sunflower - Spider-Man: Into the Spider-Verse|Post Malone</record>
+		</data>
+		<data>
+		<record>19|canadian hip hop|Lalala|Y2K</record>
+		<record>20|escape room|Truth Hurts|Lizzo</record>
+		<record>21|pop house|Piece Of Your Heart|MEDUZA</record>
+		</data>
+		<data>
+		<record>22|country rap|Panini|Lil Nas X</record>
+		<record>23|reggaeton flow|No Me Conoce - Remix|Jhay Cortez</record>
+		<record>24|latin|Soltera - Remix|Lunay</record>
+		</data>
+	<index>
+	28
+	31
+	34
+	</index>
+		<data>
+		<record>25|electropop|bad guy (with Justin Bieber)|Billie Eilish</record>
+		<record>26|canadian pop|If I Can't Have You|Shawn Mendes</record>
+		<record>27|australian pop|Dance Monkey|Tones and I</record>
+		</data>
+		<data>
+		<record>28|canadian hip hop|It's You|Ali Gatie</record>
+		<record>29|latin|Con Calma|Daddy Yankee</record>
+		<record>30|latin|QUE PRETENDES|J Balvin</record>
+		</data>
+		<data>
+		<record>31|edm|Takeaway|The Chainsmokers</record>
+		<record>32|dance pop|7 rings|Ariana Grande</record>
+		<record>33|reggaeton|0.958333333333333|Maluma</record>
+		</data>
+		<data>
+		<record>34|atl hip hop|The London (feat. J. Cole & Travis Scott)|Young Thug</record>
+		<record>35|dance pop|Never Really Over|Katy Perry</record>
+		<record>36|big room|Summer Days (feat. Macklemore & Patrick Stump of Fall Out Boy)|Martin Garrix</record>
+		</data>
+	<index>
+	40
+	43
+	46
+	</index>
+		<data>
+		<record>37|panamanian pop|Otro Trago|Sech</record>
+		<record>38|pop|Antisocial (with Travis Scott)|Ed Sheeran</record>
+		<record>39|boy band|Sucker|Jonas Brothers</record>
+		</data>
+		<data>
+		<record>40|dance pop|fuck, i'm lonely (with Anne-Marie) - from “13 Reasons Why: Season 3”|Lauv</record>
+		<record>41|edm|Higher Love|Kygo</record>
+		<record>42|dance pop|You Need To Calm Down|Taylor Swift</record>
+		</data>
+		<data>
+		<record>43|dance pop|Shallow|Lady Gaga</record>
+		<record>44|pop|Talk|Khalid</record>
+		<record>45|r&b en espanol|Con Altura|ROSALÍA</record>
+		</data>
+		<data>
+		<record>46|brostep|One Thing Right|Marshmello</record>
+		<record>47|latin|Te Robaré|Nicky Jam</record>
+		<record>48|brostep|Happier|Marshmello</record>
+		<record>49|edm|Call You Mine|The Chainsmokers</record>
+		<record>50|pop|Cross Me (feat. Chance the Rapper & PnB Rock)|Ed Sheeran</record>
+		</data>
