@@ -16,9 +16,6 @@ public class PlaylistTree
 
 	public void addSong(CengSong song)
 	{
-		// TODO: Implement this method
-		// add methods to fill both primary and secondary trees
-
 		// Add song to primary B+ tree in increasing order of audioId
 		PlaylistNode currentNode = this.primaryRoot;
 		int i = 0;
@@ -90,10 +87,8 @@ public class PlaylistTree
 
 	public CengSong searchSong(Integer audioId)
 	{
-		// TODO: Implement this method
 		// find the song with the searched audioId in primary B+ tree
 		// return value will not be tested, just print according to the specifications
-
 		// also print each index in the path
 
 		PlaylistNode currentNode = this.primaryRoot;
@@ -138,7 +133,7 @@ public class PlaylistTree
 		{
 			for (a = 0; a < indentCount; a++) System.out.print("\t");
 			System.out.println("<data>");
-			// print the song
+
 			for (a = 0; a < indentCount; a++) System.out.print("\t");
 			System.out.println("<record>" + currentLeafNode.audioIdAtIndex(i) + "|" + currentLeafNode.songAtIndex(i).genre() + "|" + currentLeafNode.songAtIndex(i).songName() + "|" + currentLeafNode.songAtIndex(i).artist() + "</record>");
 
@@ -152,17 +147,13 @@ public class PlaylistTree
 
 	public void printPrimaryPlaylist()
 	{
-		// TODO: Implement this method
 		// print the primary B+ tree in Depth-first order
-
 		dfsPrimary(0, this.primaryRoot);
 	}
 
 	public void printSecondaryPlaylist()
 	{
-		// TODO: Implement this method
 		// print the secondary B+ tree in Depth-first order
-
 		dfsSecondary(0, this.secondaryRoot);
 	}
 
@@ -171,7 +162,6 @@ public class PlaylistTree
 	private void splitLeafNode(PlaylistNodePrimaryLeaf leafNode)
 	{
 		// Split leaf node and propagate split up to root if necessary
-
 		if (leafNode.getParent() == null)
 		{
 			// Create new root
@@ -236,7 +226,6 @@ public class PlaylistTree
 	private void splitIndexNode(PlaylistNodePrimaryIndex indexNode)
 	{
 		// Split index node and propagate split up to root if necessary
-
 		if (indexNode.getParent() == null)
 		{
 			// Create new root
@@ -273,7 +262,6 @@ public class PlaylistTree
 		else
 		{
 			// Propagate split up to root
-
 			PlaylistNodePrimaryIndex parentNode = (PlaylistNodePrimaryIndex) indexNode.getParent();
 			int i = 0;
 			for (i = 0; i < parentNode.audioIdCount(); i++)
@@ -404,7 +392,6 @@ public class PlaylistTree
 	private void splitSecIndexNode(PlaylistNodeSecondaryIndex indexNode)
 	{
 		// Split index node and propagate split up to root if necessary
-
 		if (indexNode.getParent() == null)
 		{
 			// Create new root
@@ -486,7 +473,6 @@ public class PlaylistTree
 	private void dfsPrimary(int indent, PlaylistNode root)
 	{
 		// recursive Depth first search of primary tree
-
 		int i, a;
 
 		if (root instanceof PlaylistNodePrimaryLeaf)
@@ -527,7 +513,6 @@ public class PlaylistTree
 	private void dfsSecondary(int indent, PlaylistNode root)
 	{
 		// recursive Depth first search of secondary tree
-
 		int i, j, a;
 
 		if (root instanceof PlaylistNodeSecondaryLeaf)
