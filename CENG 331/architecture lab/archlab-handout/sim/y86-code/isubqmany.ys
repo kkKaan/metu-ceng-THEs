@@ -1,0 +1,12 @@
+.pos 0
+    irmovq $10, %rax
+    isubq $20, %rax
+    rrmovq %rax, %r8
+    isubq $30, %rax
+    rrmovq %rax, %r9
+    isubq $100, %rax
+    rrmovq %rax, %r10
+    isubq $0, %rax
+    rrmovq %rax, %r11
+    isubq $100, %rax
+    halt

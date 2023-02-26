@@ -1,0 +1,110 @@
+# Kaan Karaçanta
+
+.pos 0
+        irmovq stack, %rsp
+        call main
+        halt
+
+.pos 0x200
+root:
+        .quad 17
+        .quad node6
+        .quad node24
+node6:
+        .quad 6
+        .quad node4
+        .quad node11
+node4:
+        .quad 4
+        .quad node3
+        .quad node5
+node3:
+
+        .quad 3
+        .quad 0
+        .quad 0
+node5:
+        .quad 5
+        .quad 0 # Remember that 0 is null.
+        .quad 0
+node11:
+        .quad 11
+        .quad node8
+        .quad 0
+node8:
+        .quad 8
+        .quad 0
+        .quad 0
+node24:
+        .quad 24
+        .quad node19
+        .quad node40
+node19:
+        .quad 19
+        .quad 0
+        .quad 0
+node40:
+        .quad 40
+        .quad 0
+        .quad node52
+node52:
+        .quad 52
+        .quad 0
+        .quad 0
+k:
+        .quad 8
+
+
+main:
+        irmovq root, %rdi
+        irmovq k, %rsi
+        irmovq $1, %r11
+        # mrmovq (%rsi), %r14
+        # addq %r11, %r14
+        # rmmovq %r14, (%rsi) 
+        call findRec
+        ret
+
+findRec:
+        andq %rdi, %rdi
+        je notRoot
+        jmp ifRoot
+
+notRoot:
+        xorq %rax, %rax
+        irmovq $-1, %rax
+        ret
+
+ifRoot:
+        rrmovq %rdi, %r8
+        pushq %r8
+        mrmovq 8(%rdi), %rdi
+        call findRec
+        popq %r8
+        rrmovq %r8, %rdi
+
+        mrmovq (%rsi), %r10
+        subq %r11, %r10
+        jge ifK
+        ret # jmp retr
+
+ifK:
+        mrmovq (%rsi), %r13
+        subq %r11, %r13
+        rmmovq %r13, (%rsi)
+        andq %r13, %r13
+        je retr # ???
+
+        mrmovq 16(%rdi), %rdi
+        call findRec
+        mrmovq (%rsi), %r10
+        subq %r11, %r10
+        jge retr
+        ret
+retr:
+        mrmovq (%rdi), %rax
+        ret
+
+.pos 0x800
+stack:
+

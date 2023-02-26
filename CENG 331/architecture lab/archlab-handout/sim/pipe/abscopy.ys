@@ -1,0 +1,48 @@
+#/* $begin abscopy-ys */
+##################################################################
+# abscopy.ys - copy the absolute values of a src block of n words to dst.
+# Return the sum of copied (absolute) values.
+#
+# Include your name and ID here.
+# Describe how and why you modified the baseline code.
+##################################################################
+# Do not modify this portion
+# Function prologue.
+# %rdi = src, %rsi = dst, %rdx = n
+abscopy:
+##################################################################
+# You can modify this portion
+        # Loop header
+        irmovq $1, %r11         # !!!!!! 1
+        irmovq $8, %r12         # !!!!!! 2
+        # mrmovq (%rdi), %r10     # !!!!!! 3
+        xorq %rax,%rax          # sum = 0;
+        andq %rdx,%rdx          # n <= 0?
+        jle Done                # if so, goto Done:
+
+Loop:   
+        mrmovq (%rdi), %r10     # read val from src...
+        andq %r10, %r10         # val >= 0?
+        jge Positive            # if so, skip negating
+        rrmovq %r10, %r9        # temporary move
+        xorq %r10, %r10         # zero r10
+        subq %r9, %r10          # negation achieved!
+Positive:
+        addq %r10, %rax         # sum += absval   
+        rmmovq %r10, (%rsi)     # ...and store it to dst
+        # irmovq $1, %r10
+        subq %r11, %rdx         # n--
+        # irmovq $8, %r10
+        addq %r12, %rsi         # dst++
+        addq %r12, %rdi         # src++
+        andq %rdx,%rdx          # n > 0?
+        jg Loop                 # if so, goto Loop:
+##################################################################
+# Do not modify the following section of code
+# Function epilogue.
+Done:
+        ret
+##################################################################
+# Keep the following label at the end of your function
+End:
+#/* $end abscopy-ys */
