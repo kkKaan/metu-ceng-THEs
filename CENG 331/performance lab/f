@@ -1,0 +1,4 @@
+R:naive_conv: Naive baseline implementation
+R:Convolution: Current working version
+R:Naive Average Pooling: Naive baseline implementation
+R:Average Pooling: Current working version
