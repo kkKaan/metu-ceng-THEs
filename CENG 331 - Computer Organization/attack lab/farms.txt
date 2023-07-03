@@ -1,0 +1,89 @@
+
+rtarget:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000004018e5 <start_farm>:
+  4018e5:	b8 01 00 00 00       	mov    $0x1,%eax
+  4018ea:	c3                   	retq   
+
+00000000004018eb <getval_418>:
+  4018eb:	b8 db 48 81 c7       	mov    $0xc78148db,%eax
+  4018f0:	c3                   	retq   
+
+00000000004018f1 <getval_199>:
+  4018f1:	b8 48 89 fa 90       	mov    $0x90fa8948,%eax
+  4018f6:	c3                   	retq   
+
+00000000004018f7 <getval_284>:
+  4018f7:	b8 48 89 c7 c3       	mov    $0xc3c78948,%eax
+  4018fc:	c3                   	retq   
+
+00000000004018fd <getval_330>:
+  4018fd:	b8 58 90 90 c3       	mov    $0xc3909058,%eax
+  401902:	c3                   	retq   
+
+0000000000401903 <setval_464>:
+  401903:	c7 07 48 89 d6 c3    	movl   $0xc3d68948,(%rdi)
+  401909:	c3                   	retq   
+
+000000000040190a <addval_135>:
+  40190a:	8d 87 d8 c3 76 0f    	lea    0xf76c3d8(%rdi),%eax
+  401910:	c3                   	retq   
+
+0000000000401911 <getval_450>:
+  401911:	b8 1a 48 89 d6       	mov    $0xd689481a,%eax
+  401916:	c3                   	retq   
+
+0000000000401917 <getval_326>:
+  401917:	b8 a7 50 90 c3       	mov    $0xc39050a7,%eax
+  40191c:	c3                   	retq   
+
+000000000040191d <setval_248>:
+  40191d:	c7 07 48 89 fa 92    	movl   $0x92fa8948,(%rdi)
+  401923:	c3                   	retq   
+
+0000000000401924 <setval_152>:
+  401924:	c7 07 58 90 90 c3    	movl   $0xc3909058,(%rdi)
+  40192a:	c3                   	retq   
+
+000000000040192b <setval_239>:
+  40192b:	c7 07 48 89 d6 91    	movl   $0x91d68948,(%rdi)
+  401931:	c3                   	retq   
+
+0000000000401932 <getval_224>:
+  401932:	b8 48 89 fa c1       	mov    $0xc1fa8948,%eax
+  401937:	c3                   	retq   
+
+0000000000401938 <setval_237>:
+  401938:	c7 07 48 89 fa c3    	movl   $0xc3fa8948,(%rdi)
+  40193e:	c3                   	retq   
+
+000000000040193f <getval_186>:
+  40193f:	b8 48 01 c2 c1       	mov    $0xc1c20148,%eax
+  401944:	c3                   	retq   
+
+0000000000401945 <setval_180>:
+  401945:	c7 07 49 01 c2 c3    	movl   $0xc3c20149,(%rdi)
+  40194b:	c3                   	retq   
+
+000000000040194c <getval_456>:
+  40194c:	b8 4a 89 c7 c3       	mov    $0xc3c7894a,%eax
+  401951:	c3                   	retq   
+
+0000000000401952 <getval_106>:
+  401952:	b8 48 89 d6 c2       	mov    $0xc2d68948,%eax
+  401957:	c3                   	retq   
+
+0000000000401958 <addval_196>:
+  401958:	8d 87 48 01 c2 90    	lea    -0x6f3dfeb8(%rdi),%eax
+  40195e:	c3                   	retq   
+
+000000000040195f <getval_206>:
+  40195f:	b8 48 01 c2 c3       	mov    $0xc3c20148,%eax
+  401964:	c3                   	retq   
+
+0000000000401965 <getval_315>:
+  401965:	b8 48 89 c7 90       	mov    $0x90c78948,%eax
+  40196a:	c3                   	retq   
