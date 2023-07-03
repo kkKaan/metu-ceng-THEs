@@ -1,0 +1,50 @@
+add|1|canadian pop|Señorita|Shawn Mendes
+add|2|reggaeton flow|China|Anuel AA
+add|3|dance pop|boyfriend (with Social House)|Ariana Grande
+add|4|pop|Beautiful People (feat. Khalid)|Ed Sheeran
+add|5|dfw rap|Goodbyes (Feat. Young Thug)|Post Malone
+add|6|pop|I Don't Care (with Justin Bieber)|Ed Sheeran
+add|7|trap music|Ransom|Lil Tecca
+add|8|pop|How Do You Sleep?|Sam Smith
+add|9|country rap|Old Town Road - Remix|Lil Nas X
+add|10|electropop|bad guy|Billie Eilish
+add|11|reggaeton|Callaita|Bad Bunny
+add|12|dance pop|Loco Contigo (feat. J. Balvin & Tyga)|DJ Snake
+add|13|pop|Someone You Loved|Lewis Capaldi
+add|14|panamanian pop|Otro Trago - Remix|Sech
+add|15|canadian hip hop|Money In The Grave (Drake ft. Rick Ross)|Drake
+add|16|dance pop|No Guidance (feat. Drake)|Chris Brown
+add|17|latin|LA CANCIÓN|J Balvin
+add|18|dfw rap|Sunflower - Spider-Man: Into the Spider-Verse|Post Malone
+add|19|canadian hip hop|Lalala|Y2K
+add|20|escape room|Truth Hurts|Lizzo
+add|21|pop house|Piece Of Your Heart|MEDUZA
+add|22|country rap|Panini|Lil Nas X
+add|23|reggaeton flow|No Me Conoce - Remix|Jhay Cortez
+add|24|latin|Soltera - Remix|Lunay
+add|25|electropop|bad guy (with Justin Bieber)|Billie Eilish
+add|26|canadian pop|If I Can't Have You|Shawn Mendes
+add|27|australian pop|Dance Monkey|Tones and I
+add|28|canadian hip hop|It's You|Ali Gatie
+add|29|latin|Con Calma|Daddy Yankee
+add|30|latin|QUE PRETENDES|J Balvin
+add|31|edm|Takeaway|The Chainsmokers
+add|32|dance pop|7 rings|Ariana Grande
+add|33|reggaeton|0.958333333333333|Maluma
+add|34|atl hip hop|The London (feat. J. Cole & Travis Scott)|Young Thug
+add|35|dance pop|Never Really Over|Katy Perry
+add|36|big room|Summer Days (feat. Macklemore & Patrick Stump of Fall Out Boy)|Martin Garrix
+add|37|panamanian pop|Otro Trago|Sech
+add|38|pop|Antisocial (with Travis Scott)|Ed Sheeran
+add|39|boy band|Sucker|Jonas Brothers
+add|40|dance pop|fuck, i'm lonely (with Anne-Marie) - from “13 Reasons Why: Season 3”|Lauv
+add|41|edm|Higher Love|Kygo
+add|42|dance pop|You Need To Calm Down|Taylor Swift
+add|43|dance pop|Shallow|Lady Gaga
+add|44|pop|Talk|Khalid
+add|45|r&b en espanol|Con Altura|ROSALÍA
+add|46|brostep|One Thing Right|Marshmello
+add|47|latin|Te Robaré|Nicky Jam
+add|48|brostep|Happier|Marshmello
+add|49|edm|Call You Mine|The Chainsmokers
+add|50|pop|Cross Me (feat. Chance the Rapper & PnB Rock)|Ed Sheeran
