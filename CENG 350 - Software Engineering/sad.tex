@@ -1,0 +1,890 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[left=2.54cm, top=2.54cm, bottom=2.54cm, right=2.54cm]{geometry}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    \huge
+    \textbf{SOFTWARE ARCHITECTURE DESCRIPTION}\\
+    \vspace{1cm}
+    \textbf{afetbilgi.com}
+
+    \vspace{1cm}
+    \large
+    Kaan Karaçanta - 2448546 \\
+    Kerem Recep Gür - 2448462 \\
+    \vspace{1cm}
+    Group 10 \\
+    \vspace{1cm}
+    \today
+    \vspace*{\fill}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+\section{Introduction}
+\subsection{Purpose and Objectives of afetbilgi.com}
+The purpose of afetbilgi.com is to establish a reliable, user-friendly, and multilingual platform that caters to individuals affected by disasters, with a focus on those impacted by earthquakes such as the event in Kahramanmaraş on the 6\textsuperscript{th} of February, and for any other disasters in the future. The system seeks to furnish survivors with localized, relevant information and resources, thereby empowering them to navigate the complexities of post-disaster scenarios more effectively.
+The platform is designed around three main sections: "General Needs", "Important Resources", and "Health Services", each addressing a wide range of survivor needs. These sections aim to centralize essential information, promote community resilience, and provide easy access to life-saving resources and services, thus streamlining the recovery process.
+
+In addition to this, afetbilgi.com has several key objectives:
+
+\begin{itemize}
+    \item To offer a comprehensive repository of resources and contacts related to general needs, important resources, and health services, making it easy for survivors to find the help they need.
+    \item To deliver an easy-to-use interface that caters to users with varying levels of technical proficiency, ensuring that everyone can access and understand the provided information.
+    \item To ensure the system's scalability and reliability, allowing it to accommodate a growing number of users and effectively handle peak traffic during disasters.
+\end{itemize}
+
+Through these objectives, afetbilgi.com aspires to play an instrumental role in disaster management efforts, thereby enhancing the resilience and safety of communities.
+
+\subsection{Scope}
+
+The afetbilgi.com system functions within the realm of disaster response and recovery, particularly focusing on earthquake survivors in Turkey. The web-based platform is designed to serve as a bridge, connecting survivors with essential resources, aids, and information during their time of need. It is crucial to note that the primary role of afetbilgi.com is to provide access to external links or interfaces, rather than directly deliver services or aid.
+
+The scope of afetbilgi.com entails:
+
+\begin{itemize}
+    \item Afetbilgi.com, as a software product, is conceived to provide centralized and streamlined access to vital post-disaster resources and information tailored to the needs of earthquake survivors in Turkey.
+    \item The application of the afetbilgi.com software includes offering a reliable, user-friendly, and multilingual platform for survivors of disasters. The system is designed to bolster community resilience and ease access to life-saving resources and services, thereby playing a pivotal role in the overall recovery process.
+    \item The system's scope extends to localized resources specific to individual cities in Turkey, connecting survivors with relevant service providers and fostering resilience in the affected communities.
+    \item Users are expected to easily reach or view these aids and resources, including their locations on a map, if available.
+\end{itemize}
+
+Certain functionalities fall outside the scope of the afetbilgi.com system:
+
+\begin{itemize}
+    \item Emergency response coordination: Afetbilgi.com is not designed to function as an emergency response coordination platform. It does not offer real-time disaster management or command and control capabilities.
+    \item Personalized user accounts: The afetbilgi.com website does not support the creation of personalized user accounts to track individual needs or preferences.
+    \item Direct communication with emergency services: The website is not built to facilitate direct communication with emergency services, such as reporting incidents or requesting immediate assistance.
+\end{itemize}
+
+While the system aims to provide a comprehensive range of resources and information, it's important to understand its limitations to avoid any misunderstanding or misuse.
+
+\subsection{Stakeholders and Their Concerns}
+In the context of afetbilgi.com, the stakeholders are a diverse group of individuals and organizations, each with their unique concerns and interests in the system. The stakeholders of afetbilgi.com include:
+
+\begin{itemize}
+    \item \textbf{End Users:} These are the people who interact directly with the system. Their primary concern is that the website is reliable, easy to use, and provides timely and accurate information regarding disaster relief.
+    
+    \item \textbf{System Administrators \& Developers:} These are the individuals responsible for the maintenance and operation of the system. Their concerns include the ease of system management, system security, and the ability to update and modify the system as necessary.
+
+    \item \textbf{External Content Providers \& NGOs:} These are the organizations or individuals who provide the disaster-related information that is presented on the website. Their primary concern is that the information they provide is displayed accurately and updated timely on the website.
+
+    \item \textbf{Government Agencies:} These are the regulatory bodies and other government entities that oversee disaster management. Their concerns typically revolve around the system's compliance with laws and regulations, such as data privacy and accessibility standards.
+\end{itemize}
+
+\newpage
+
+\section{References}
+\textbf{This document is written with respect to the specifications of the document below:} 
+\vspace{0.2cm}
+
+42010-2022 - ISO/IEC/IEEE International Standard - Systems and software engineering – Architecture Description.
+
+\vspace{0.5cm}
+\textbf{Other Sources:}
+\vspace{0.2cm}
+
+[1] A. Keleş et al., "afetbilgi.com," GitHub Repository, 2023. [Source Code]. Available: 
+
+https://github.com/alpaylan/afetbilgi.com
+
+[2] Rozanski, N., \& Woods, E. (2005). Software Systems Architecture: Working with
+
+Stakeholders Using Viewpoints and Perspectives.
+
+\newpage
+
+\section{Glossary}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|p{11cm}|}
+        \hline
+        \textbf{Term} & \textbf{Definition} \\
+        \hline
+        API & Application Programming Interface - A set of rules that allow programs to talk to each other, enabling data sharing and interaction between different software components. \\
+        \hline
+        Content Providers & The organizations or individuals who provide the information regarding disaster relief that is displayed on the afetbilgi.com website. \\
+        \hline
+        Database & An organized collection of data, generally stored and accessed electronically from a computer system.\\
+        \hline
+        Disaster & A serious disruption of the functioning of a community or a society at any scale due to hazardous events interacting with conditions of exposure, vulnerability and capacity, leading to one or more of the following: human, material, economic and environmental losses and impacts. \\
+        \hline
+        End User & The person or group who directly interacts with the afetbilgi.com website. \\
+        \hline
+        Geo-Information System & A system designed to capture, store, manipulate, analyze, manage, and present all types of geographical data.\\
+        \hline
+        NGOs & Non-governmental Organizations - Non-profit organizations that operate independently of any government. \\
+        \hline
+        Stakeholders & All individuals or organizations that have an interest or are affected by the afetbilgi.com system. \\
+        \hline
+        System Administrator & The person or group who is responsible for maintaining, updating, and managing the afetbilgi.com website. \\
+        \hline
+        System Availability & The ability of the system to be in a state to perform a required function at a given instant of time or at any instant of time within a given time interval.\\
+        \hline
+        System Reliability & The ability of a system or component to perform its required functions under stated conditions for a specified period of time.\\
+        \hline
+        System Security & The protection of information systems from theft or damage to the hardware, the software, and to the information on them, as well as from disruption or misdirection of the services they provide.\\
+        \hline
+        UI & User Interface - the point of human-computer interaction and communication in a device, which includes the total user experience.\\
+        \hline
+    \end{tabular}
+    \caption{Glossary}
+    \label{Glossary}
+\end{table}
+
+\newpage
+
+
+\section{Architectural Views}
+
+\subsection{Context View}
+
+\subsubsection{Stakeholders' Uses of This View}
+Different stakeholders have different uses for the context view of the afetbilgi.com system:
+
+\begin{itemize}
+    \item \textbf{End Users:} End users utilize the context view to understand the overall structure of the afetbilgi.com system, including its primary functionalities and how it interacts with external systems. This view provides users with a high-level understanding of the system's capabilities, helping them navigate the site and utilize its features effectively.
+
+    \item \textbf{System Administrators \& Developers:} For system administrators and developers, the context view serves as a roadmap for system maintenance and development activities. It helps them understand the system's connections and dependencies, enabling them to manage updates, troubleshoot issues, and plan for future enhancements more effectively.
+
+    \item \textbf{External Content Providers \& NGOs:} External content providers and NGOs use the context view to understand how their content integrates with the afetbilgi.com system. This view helps them ensure that their information is accurately represented and updated in a timely manner, and it provides a framework for coordinating content updates and improvements with the afetbilgi.com team.
+
+    \item \textbf{Government Agencies:} Government agencies use the context view to assess the system's compliance with relevant regulations. By providing a clear overview of the system's structure and external interfaces, this view helps agencies evaluate whether the system meets required standards for data privacy, accessibility, and other regulatory concerns.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Context Diagram}
+The context diagram for afetbilgi.com illustrates the system's interactions with its external entities. These interactions represent the exchange of information between the system and the entities involved.
+
+The external entities interacting with the system include:
+\begin{itemize}
+    \item \textbf{Users:} These are the individuals who use afetbilgi.com to access disaster-related resources. Users interact with the system by selecting their city, viewing maps, and accessing information provided by external websites via links on afetbilgi.com. The arrow from the user to the system represent these actions. The system, in return, provides relevant functions of the system to the users, represented by the arrow from the system to the users.
+
+    \item \textbf{Admins:} Administrators are responsible for maintaining and updating the system. They interact with afetbilgi.com by updating the website's content and ensuring it's running smoothly.
+
+    \item \textbf{Google Maps:} Google Maps is an integral part of the system, providing geographic data and mapping capabilities. The system retrieves map data from Google Maps and presents it to the users.
+
+    \item \textbf{External Websites:} These are the source of the disaster-related resources that afetbilgi.com provides to its users. The system pulls information from these external websites and presents it to users.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{ContDiagOld.jpg}
+\caption{Context Diagram for afetbilgi.com}
+\end{figure}
+
+\newpage
+
+\subsubsection{External Interfaces}
+
+\begin{figure}[H] %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering 
+\includegraphics[scale=0.55]{ExternalInterfaces1.jpg}
+\caption{External Interfaces Class Diagram for afetbilgi.com}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Operation} & \textbf{Description} \\
+        \hline % - % Location -, IP +
+        DownloadPDF & Allows users to download relevant data in PDF format for offline access. \\
+        \hline % - 
+        RetrieveInfo & Enables users to access and view necessary information on the website. \\
+        \hline % -
+        SelectLanguage & Provides a function for users to select their preferred language for using the website. \\
+        \hline % -
+        SelectCity & Lets users select a specific city to view relevant local disaster information. \\
+        \hline % + % DataSheet +, ParsedData +
+        RetrieveImportantResourcesTable & Retrieves and displays important resources data table upon user's request. \\
+        \hline % +
+        RetrieveGeneralNeedsTable & Retrieves and displays general needs data table upon user's request. \\
+        \hline % +
+        RetrieveHealthServicesTable & Retrieves and displays health services data table upon user's request. \\
+        \hline % +
+        RetrieveToHelpTable & Retrieves and displays the "To Help" data table upon user's request. \\
+        \hline % +
+        GeneratePDF & Generates downloadable PDF versions of requested data tables. \\
+        \hline % +
+        BackupDb & Initiates a backup process to ensure website's availability, data safety and integrity. \\
+        \hline % +
+        QueryDb & Executes queries on the database to fetch or manipulate data. \\
+        \hline % - % DataToBeUpdated -
+        LoadMap & Loads the Google Maps API and displays the map on the user interface. \\
+        \hline % -
+        MarkLocation & Marks a specific location on the map using the provided coordinates. \\
+        \hline % -
+        GetDirections & Displays the directions from the start to the end on map. \\
+        \hline % -
+        SearchPlaces & Searchs for places based on the input and displays the results on map. \\
+        \hline
+    \end{tabular}
+    \caption{External Interface Operation Descriptions}
+    \label{tab:operations}
+\end{table}
+
+\newpage
+
+\subsubsection{Interaction scenarios}
+There are two different interaction scenarios, one of them is between "Google Maps" and "DatabaseInterface", and the other is between "UserInterface" and DatabaseInterface, here are the activity diagrams of these scenarios:
+
+\begin{figure}[H] %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centering
+\includegraphics[scale=0.55]{DB-Maps Activity.jpg}
+\caption{Activity Diagram for Database-Google Maps Interaction}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{User Accessing Information and Downloading Data.jpg}
+\caption{Activity Diagram for User-Database Interaction}
+\end{figure}
+
+\newpage
+
+\subsection{Functional View}
+\subsubsection{Stakeholders' Uses of This View}
+The Functional View illustrates the main functionalities that the afetbilgi.com system offers. It provides a detailed look at what the system does from the users' point of view. This view is particularly useful for several stakeholders. Users may make use of this view to understand the capabilities of the afetbilgi.com system and how they can make use of its features. 
+
+For system administrators \& developers this view provides a comprehensive map of the system's functionalities. It allows them to understand the operations of the system, which is essential for troubleshooting, maintenance, and planning for future upgrades.
+
+External content providers and NGOs can use the functional view to comprehend how their information integrates with and is displayed in the afetbilgi.com system. Finally, the functional view can assist government agencies in assessing whether the system complies with relevant regulations by offering a detailed outline of the system's functionalities.
+
+\subsubsection{Component Diagram}
+
+The component diagram for Afetbilgi.com includes two subsystems and two external systems. 
+
+\begin{itemize}
+    \item \textbf{Subsystems:}
+    \begin{itemize}
+        \item \textbf{Database Management System}: This subsystem contains four components, and these correspond to the main tables/parts of this website:
+        \begin{itemize}
+            \item Important Resources
+            \item General Needs
+            \item Health Services
+            \item To Help
+        \end{itemize}
+        These components are connected to a port that enables two functionalities, namely SourceCode (with Github), which provides the code for the website, and RetrieveTable (with the PDF component of the User Interface), which allows the user to create PDFs to download, or just to look at the searched table.
+
+        \item \textbf{User Interface (UI)}: This subsystem has two components:
+        \begin{itemize}
+            \item PDF: This component is connected to the database management system subsystem through the RetrieveTable function.
+            \item Map: This component is connected to Google Maps through the RetrieveMap function.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{External Systems:}
+    \begin{itemize}
+        \item \textbf{Github}: This system is connected to the both subsystems to provide the SourceCode function.
+        \item \textbf{Google Maps}: This system is connected to the UI Map component through the RetrieveMap function to connect the website to Google Maps API.
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{Component.jpg}
+\caption{Component Diagram for afetbilgi.com}
+\end{figure}
+
+\subsubsection{Internal Interfaces}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{InternalInterfaces.jpg}
+\caption{Internal Interfaces Class Diagram for afetbilgi.com}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Operation} & \textbf{Description} \\
+        \hline 
+        DisplayInfo & Presents disaster-related information to the user in a readable format. \\
+        \hline
+        DownloadPDF & Allows the system to download relevant data in PDF format. \\
+        \hline
+        ChangeLanguage & Provides a function to change the preferred language for using the website. \\
+        \hline 
+        ChangeCity & Lets users select a specific city to view relevant local disaster information. \\
+        \hline
+        CollectDataFromSources & Gathers data from specified sources for further processing and storage. \\
+        \hline
+        ProcessData & Transforms raw data into a format suitable for storage and retrieval. \\
+        \hline 
+        StoreData & Saves processed data into the system for future retrieval and use. \\
+        \hline
+        SetCollectionInterval & Allows the system to set the frequency of data collection from sources. \\
+        \hline
+        RetrieveData & Retrieves stored data for display or further processing. \\
+        \hline
+        UpdateData & Updates existing data records with new or revised information. \\
+        \hline
+        DeleteData & Removes specific data records from the system permanently. \\
+        \hline
+        CacheData & Temporarily stores frequently accessed data for quick retrieval. \\
+        \hline
+        AuthenticateAdmin & Verifies the credentials of an admin user to allow access to administrative features. \\
+        \hline
+        SetAdminCredentials & Allows an authenticated admin to set new credentials for admin access. \\
+        \hline
+        RemoveAdminCredentials & Allows an authenticated admin to remove existing admin credentials. \\
+        \hline
+    \end{tabular}
+    \caption{Internal Interface Operation Descriptions}
+    \label{tab:operations}
+\end{table}
+
+\subsubsection{Interaction Patterns}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{Sequence1.jpg}
+\caption{Sequence Diagram for Data collector and Authentication Interfaces}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{Sequence2.jpg}
+\caption{Sequence Diagram for Data collector and Database Management Interfaces}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{Sequence3.jpg}
+\caption{Sequence Diagram for User and Database Management Interfaces}
+\end{figure}
+
+\newpage
+
+\subsection{Information View}
+\subsubsection{Stakeholders' Uses of This View}
+
+The information view is crucial for end users, as it outlines how information is structured and accessed on the platform. This view enables users to understand how data is organized and related, thus guiding their interaction with the platform. Users retrieve, read, and interact with the disaster information and resources data, based on their needs and interests.
+
+For system administrators and developers, this view provides a clear understanding of the data organization, aiding in tasks such as database management, data validation, system maintenance, and development. They are involved in creating, updating, and deleting data from the system.
+
+Content providers and NGOs use this view to understand how their provided data is stored, organized, and presented in the system. This understanding allows them to appropriately structure their data for seamless integration with the afetbilgi.com system. They contribute by providing new data and updating existing data related to disaster resources.
+
+Government agencies are interested in this view to ensure the data managed by the system complies with the regulations and standards. They can review this view to understand how disaster-related data is organized, how users' personal data is stored and managed, and whether it aligns with data privacy regulations.
+
+\subsubsection{Database Class Diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.38]{Database Diagram.jpg}
+\caption{Database Class Diagram for afetbilgi.com}
+\end{figure}
+
+\subsubsection{Operations on Data}
+
+The following table represents some of the different operations that can be done on the logical memory objects that are shown in the database class diagram.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|X|p{10cm}|}
+\hline
+\textbf{Operation} & \textbf{CRUD (Create/Read/Update/Delete)} \\
+\hline
+     createGeneralNeedsTable & \textbf{Create:} General Needs \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     createHealthServicesTable & \textbf{Create:} Health Services \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     showGeneralNeeds & \textbf{Create:} - \\
+     & \textbf{Read:} General Needs \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     showImportantResources & \textbf{Create:} - \\
+     & \textbf{Read:} Important Resources \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     updateToHelp & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} To Help \\
+     & \textbf{Delete:} - \\
+\hline
+     updateLanguage & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} Main Table \\
+     & \textbf{Delete:} - \\
+\hline
+     deleteResource & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} Main Table, General Needs, Important Resources, Health Services, To Help \\
+\hline
+     addNewCity & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} Main Table \\
+     & \textbf{Delete:} - \\
+\hline
+     showResourceInCity & \textbf{Create:} - \\
+     & \textbf{Read:} Important Resources, Main Table \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+
+\end{tabularx}
+\caption{Operations on Data Table}
+\label{tab:opOnData}
+\end{table}
+
+\newpage
+
+\subsection{Deployment View}
+\subsubsection{Stakeholders' Uses of This View}
+
+The Deployment View illustrates how the system's components are distributed across the hardware infrastructure and their interaction with each other. This view provides the details of the runtime platform that hosts the servers, databases, storage, and other necessary services. For afetbilgi.com, the system is deployed on a cloud-based infrastructure with a scalable, redundant, and distributed architecture for increased resilience and performance.
+
+The deployment view is particularly relevant to system administrators who manage the runtime platform. It guides them in the installation, configuration, and maintenance of the system components. It helps them understand the dependencies and interactions between the components to manage them effectively and efficiently. Furthermore, developers utilize this view to understand the deployment structure, which influences how they design, develop, and test the system's components. Understanding the deployment environment helps in developing components that effectively utilize the resources and deal with potential limitations.
+
+\subsubsection{Deployment Diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{DeploymentDiagram.jpg}
+\caption{Deployment Diagram for afetbilgi.com}
+\end{figure}
+
+\newpage
+
+\begin{itemize}
+    \item \textbf{AWS Cloud Infrastructure:} This is the main hosting platform for the system. Amazon Web Services (AWS) provides a robust, scalable, and secure cloud infrastructure that hosts various components of the system.
+    
+    \item \textbf{Data Buckets:} This component is likely an AWS S3 bucket, which is a public cloud storage resource available in AWS's Simple Storage Service (S3). It stores data gathered from GitHub and serves as the primary data storage for the system.
+    
+    \item \textbf{Athena:} AWS Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. It allows for the direct querying of data stored in the Data Buckets.
+    
+    \item \textbf{CloudWatch:} Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), and IT managers. It provides data and actionable insights to monitor applications, understand and respond to system-wide performance changes.
+    
+    \item \textbf{Cloudflare:} Cloudflare is a web infrastructure and website security company, providing content delivery network services, DDoS mitigation, Internet security, and distributed domain name server services. Here, it connects the system hosted on AWS to the internet, likely providing security and speed enhancements.
+    
+    \item \textbf{GitHub:} GitHub hosts the system's Data Parser and PDF Generator components. It also provides the data sheet through Data Collectors and Validators.
+    
+    \item \textbf{Data Parser:} This component retrieves data from the data sheet provided by Data Collectors and Validators, processes the data, and sends it to the Data Buckets in AWS.
+    
+    \item \textbf{PDF Generator:} This component is likely responsible for generating PDF documents, possibly for reports or other user-downloaded data.
+    
+    \item \textbf{Data Collectors and Validators:} This is where the data used by the system originates. These collectors gather data, and validators ensure the data's accuracy before it's sent to the Data Parser in GitHub.
+\end{itemize}
+
+\newpage
+
+\subsection{Design Rationale}
+
+\begin{enumerate}
+    \item \textbf{Context View:}
+    
+    The context view in the design of afetbilgi.com was meant to highlight the relationships and interactions between the system and its environment. The usage of the system context diagram allowed us to visualize the interactions between the stakeholders (users, website administrators, and external systems) and the website. The context view also includes an external interfaces diagram which delineates the attributes of each external entity and their methods of interaction with the system. The system was designed to interact with external systems such as disaster management websites, and governmental websites for the purposes of sharing information, linking to external resources, and displaying accurate and real-time information about disaster-related incidents. By using the context view, the team was able to show a broad overview of the system's external interactions in a straightforward manner, facilitating an understanding of how the system operates within its environment.
+
+    \item \textbf{Functional View:}
+
+    Component diagrams and internal interface class diagrams were employed for the functional perspective. The user interface, back-end processing units, and the database are all depicted in high-level detail in the component diagram, which also shows the other key functional components of the system. These components work together to carry out the website's primary functions, including user authentication, information presentation and updating, and management of user comments and content. The class diagrams offer a more detailed look at the system's parts, characteristics, and interactions. This makes it possible to more clearly comprehend each component's roles and how they work together to meet the system's requirements.
+
+    \item \textbf{Information View:}
+
+    The information view of the afetbilgi.com system was designed to illustrate the data objects and their relationships within the system. As the data is primarily stored in a centralized database, the class diagrams used here represent the main entities in the system such as user profiles, disaster events, resources, and social media posts. The relationships between these entities are also depicted, demonstrating how the data flows and is manipulated within the system.
+
+    \item \textbf{Deployment View:}
+
+    The deployment view provides an understanding of the infrastructure that the afetbilgi.com system is deployed on. A deployment diagram was used to show that the website is hosted on a cloud-based platform, which provides scalability, redundancy, and distributed computing capabilities. This cloud-based approach was chosen to ensure high availability and performance, crucial factors for a disaster management system where timely access to information can make a significant difference. The diagram also shows how users interact with the system through various devices and browsers over the internet, and how the system itself communicates with external systems for fetching and updating data.
+\end{enumerate}
+
+\newpage
+
+\section{Architectural Views for Suggestions to Improve the Existing System}
+
+\subsection{Context View}
+\subsubsection{Stakeholders' Uses of This View}
+Different stakeholders have different uses for the context view of the enhanced afetbilgi.com system:
+
+\begin{itemize}
+    \item \textbf{End Users:} The expanded functionalities, including disaster recovery resources, disaster preparation resources, social media sharing capabilities, damaged infrastructure reporting, and psychological support resources, provide comprehensive information to end users. Users utilize the context view to understand the structure of the system, navigate its various sections effectively, and utilize the resources and information available.
+    
+    \item \textbf{System Administrators \& Developers:} The context view serves as a roadmap for system maintenance and development activities. It allows them to understand the system's new functionalities, its dependencies, and the integration with external systems like social media platforms and government infrastructure systems. This helps them in managing updates, troubleshooting issues, planning for future enhancements, and administering the expanded database more effectively.
+
+    \item \textbf{External Content Providers \& NGOs:} With the expanded functionalities, external content providers and NGOs have more avenues to share their resources and information. They use the context view to understand how their content integrates with the afetbilgi.com system, ensuring their information is accurately represented, updated in a timely manner, and appropriately categorized within the new sections.
+
+    \item \textbf{Government Agencies:} Government agencies use the context view to understand the integration between the afetbilgi.com system and local government infrastructure systems, ensuring compliance with relevant regulations. This clear overview of the system's structure and external interfaces, along with the disaster-related data provided, aids them in evaluating whether the system meets required standards for data privacy, accessibility, and other regulatory concerns.
+
+    \item \textbf{Social Media Platforms:} Social media platforms have a crucial role in the distribution of disaster-related information. These platforms utilize the context view to understand how shared content from afetbilgi.com is structured, enabling effective information display on their platforms and encouraging further information dissemination to a wider audience.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Context Diagram}
+The context diagram for the enhanced afetbilgi.com system further illustrates the interactions between the system and its external entities. These interactions represent the exchange of information and the added functionalities that contribute to the user experience.
+
+The external entities interacting with the enhanced system include:
+
+\begin{itemize}
+    \item \textbf{Users:} Users now have more ways to engage with afetbilgi.com due to the expanded functionalities. Apart from selecting their city and viewing maps, users can now access disaster recovery resources, disaster preparation resources, view damaged infrastructure, share information on social media, and access psychological support resources. The arrow from the user to the system represents these actions. In response, the system provides users with the relevant resources and functions, represented by the arrow from the system to the users.
+
+    \item \textbf{Administrators:} The role of administrators has expanded in the enhanced system. Apart from updating the website's content and ensuring smooth operation, administrators now need to manage the added functionalities. This might include coordinating with external websites for accurate and timely information, troubleshooting new functionalities, and ensuring the efficient operation of the expanded database.
+
+    \item \textbf{Google Maps:} Google Maps remains an integral part of the system, providing geographic data and mapping capabilities. In the enhanced version, users may also be able to view damaged infrastructure data on the maps, providing a more comprehensive picture of the disaster's impact.
+
+    \item \textbf{External Websites:} These are the sources of the disaster-related resources that afetbilgi.com provides to its users. In the enhanced version, more diverse types of resources are pulled from these external websites, including recovery and preparation resources, damaged infrastructure reports, and psychological support resources. Furthermore, social media platforms are now directly integrated into the system, allowing users to share disaster-related information from afetbilgi.com to their social media accounts.
+
+\end{itemize}
+
+This is the updated explanation for the context diagram of the enhanced afetbilgi.com system, reflecting its expanded functionalities and interactions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{ContDiagNew.jpeg}
+\caption{Context Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\subsubsection{External Interfaces}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{ExternalInterfaces2.jpg}
+\caption{External Interfaces Class Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Operation} & \textbf{Description} \\
+        \hline % - % Location -, IP +
+        DownloadPDF & Allows users to download relevant data in PDF format for offline access. \\
+        \hline % - 
+        RetrieveInfo & Enables users to access and view necessary information on the website. \\
+        \hline % -
+        SelectLanguage & Provides a function for users to select their preferred language for using the website. \\
+        \hline % -
+        SelectCity & Lets users select a specific city to view relevant local disaster information. \\
+        \hline % + % DataSheet +, ParsedData +
+        GetDisasterRecoveryResources & Retrieves and displays resources for disaster recovery specific to the selected city or region. \\
+        \hline
+        GetDisasterPreparationResources & Retrieves and displays resources for disaster preparation, including guidelines, local resources, and contacts. \\
+        \hline
+        Share & Provides the functionality to share specific disaster-related resources or pages through social media. \\
+        \hline
+        GetDamagedInfrastructureInfo & Retrieves and displays information about damaged infrastructure in a selected city or region. \\
+        \hline
+        GetPsychologicalSupportInfo & Retrieves and displays information about psychological support services available for disaster-affected individuals. \\
+        \hline
+        RetrieveImportantResourcesTable & Retrieves and displays important resources data table upon user's request. \\
+        \hline % +
+        RetrieveGeneralNeedsTable & Retrieves and displays general needs data table upon user's request. \\
+        \hline % +
+        RetrieveHealthServicesTable & Retrieves and displays health services data table upon user's request. \\
+        \hline % +
+        RetrieveToHelpTable & Retrieves and displays the "To Help" data table upon user's request. \\
+        \hline
+        GeneratePDF & Generates downloadable PDF versions of requested data tables. \\
+        \hline
+        BackupDb & Initiates a backup process to ensure website's availability, data safety and integrity. \\
+        \hline
+        QueryDb & Executes queries on the database to fetch or manipulate data. \\
+        \hline
+        AddData & Gives administrators the ability to add new data or content to the database. \\
+        \hline
+        UpdateDb & Allows administrators to make updates or modifications to existing data in the database. \\
+        \hline 
+        RemoveData & Provides administrators with the function to remove unnecessary or outdated data from the database. \\
+        \hline
+    \end{tabular}
+    \caption{External Interface Operation Descriptions for Improved afetbilgi.com}
+    \label{tab:operations}
+\end{table} 
+
+\newpage
+
+\subsubsection{Interaction Scenarios}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{Activity Diagram for suggestions.jpg}
+\caption{Activity Diagram for Improved afetbilgi.com}
+\end{figure}
+\newpage
+
+\subsection{Functional View}
+\subsubsection{Stakeholders' Uses of This View}
+The Functional View for the enhanced version of afetbilgi.com provides a comprehensive understanding of the system's new features and expanded functionalities. Various stakeholders can take advantage of this view in different ways. End users can use the functional view to navigate the enhanced functionalities more effectively. This includes resources for disaster recovery and preparation, social media sharing capabilities, infrastructure damage reporting, and psychological support resources.
+
+The functional view serves as a guide for system administrators and developers, enabling them to comprehend and manage the system's new features and dependencies. Moreover, the enhanced version's functional view allows external content providers and NGOs to better understand the integration of their content with new functions of the afetbilgi.com.
+
+The functional view helps government agencies to understand the integration of the afetbilgi.com system with local infrastructure systems and evaluate its compliance with relevant regulations. Besides, social media platforms benefit from the functional view by understanding the structure of content shared from afetbilgi.com. This allows for effective information display on their platforms and further dissemination of information to a wider audience.
+
+\subsubsection{Component Diagram}
+
+The component diagram for Afetbilgi.com includes two subsystems and three external systems. 
+
+\begin{itemize}
+    \item \textbf{Subsystems:}
+    \begin{itemize}
+        \item \textbf{Database Management System}: This subsystem contains four components, and these correspond to the main tables/parts of this website:
+        \begin{itemize}
+            \item Important Resources
+            \item General Needs
+            \item Health Services
+            \item To Help
+        \end{itemize}
+        These components are connected to a port that enables two functionalities, namely SourceCode (with Github), which provides the code for the website, and RetrieveTable (with the PDF component of the User Interface), which allows the user to create PDFs to download, or just to look at the searched table.
+
+        In the improved version, it is also connected to an external system, Social Media, via a 'Share' functionality. This feature likely allows for the sharing of relevant data directly to social media platforms.
+
+        \item \textbf{User Interface (UI)}: This subsystem has two components:
+        \begin{itemize}
+            \item PDF: This component is connected to the database management system subsystem through the RetrieveTable function.
+            \item Map: This component is connected to Google Maps through the RetrieveMap function.
+        \end{itemize}
+        In the improved version, a new component - Damaged Infrastructure - has been added. This component is responsible for tracking and displaying information related to infrastructure damage due to disasters. It is connected to the Map component, suggesting that this information is visually represented on a map for users.
+    \end{itemize}
+
+    \item \textbf{External Systems:}
+    \begin{itemize}
+        \item \textbf{GitHub}: This system is connected to the both subsystems to provide the SourceCode function.
+        \item \textbf{Google Maps}: This system is connected to the UI Map component through the RetrieveMap function to connect the website to Google Maps API.
+        \item \textbf{Social Media}: This is a new external system added to the improved version of the system. Connected to the DBMS via the 'Share' functionality, it enables the system to share relevant data directly to social media platforms.
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{ComponentDiagram2.jpg}
+\caption{Component Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\subsubsection{Internal Interfaces}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{InternalInterfaces2.jpg}
+\caption{Internal Interfaces Class Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        \textbf{Operation} & \textbf{Description} \\
+        \hline 
+        DisplayInfo & Presents disaster-related information to the user in a readable format. \\
+        \hline
+        DownloadPDF & Allows the system to download relevant data in PDF format. \\
+        \hline
+        ChangeLanguage & Provides a function to change the preferred language for using the website. \\
+        \hline 
+        ChangeCity & Lets users select a specific city to view relevant local disaster information. \\
+        \hline
+        RedirectsToSocialMedia & Lets users share the relevant data on their social media accounts by redirecting to the selected platform. \\
+        \hline
+        StoreData & Saves processed data into the system for future use. \\
+        \hline
+        RetrieveData & Retrieves stored data for display or further processing. \\
+        \hline
+        UpdateData & Updates existing data records with new information. \\
+        \hline
+        DeleteData & Removes specific data records from the system permanently. \\
+        \hline
+        CacheData & Temporarily stores frequently accessed data for speed. \\
+        \hline
+        AuthenticateAdmin & Verifies the credentials of an admin user to allow access to administrative features. \\
+        \hline
+        SetAdminCredentials & Allows an authenticated admin to set new credentials for admin access. \\
+        \hline
+        RemoveAdminCredentials & Allows an authenticated admin to remove existing admin credentials. \\
+        \hline
+    \end{tabular}
+    \caption{Internal Interface Operation Descriptions for Improved afetbilgi.com}
+    \label{tab:operations}
+\end{table}
+
+\subsubsection{Interaction Patterns}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.42]{SequenceSuggestion.jpg}
+\caption{Sequence Diagram for User Interface, and Data Management Interfaces}
+\end{figure}
+
+\newpage
+
+\subsection{Information View}
+\subsubsection{Stakeholders' Uses of This View}
+The information view is of primary interest to stakeholders that need to understand how data is organized and managed in the newly enhanced afetbilgi.com system. With the new features, end users are now able to access valuable resources for disaster recovery and preparation, view damaged infrastructure, share information on social media, and find psychological support resources.
+    
+The enhanced system requires the management of new data types, including recovery and preparation resources, social media sharing data, damaged infrastructure reports, and psychological support information. The information view helps administrators and developers understand these new data requirements, enabling them to effectively maintain and update the system. 
+    
+Content providers will need to understand how to structure their data contributions to fit the new features, such as how to format and supply information about damaged infrastructure or psychological support resources. This view provides insight into the new data organization, aiding these stakeholders in providing their contributions effectively.
+    
+The information view can help government agencies understand how the new features comply with regulations and standards, especially concerning user data privacy and security. With the addition of new features, it's essential that these new functions adhere to data privacy laws and regulations.
+
+
+\subsubsection{Database Class Diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{Database Diagram2.jpg}
+\caption{Database Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\newpage
+
+\subsubsection{Operations on Data} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The following table represents some of the different operations that can be done on the logical memory objects that are shown in the database class diagram.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|X|p{10cm}|}
+\hline
+\textbf{Operation} & \textbf{CRUD (Create/Read/Update/Delete)} \\
+\hline
+     createImportantResourcesTable & \textbf{Create:} Important Resources \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     createHealthServicesTable & \textbf{Create:} Health Services \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     showDisasterPreparation & \textbf{Create:} - \\
+     & \textbf{Read:} General Needs \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     showPsychologicalResources & \textbf{Create:} - \\
+     & \textbf{Read:} Health Services \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+     updateDamagedInfrastructure & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} Important Resources, Main Table \\
+     & \textbf{Delete:} - \\
+\hline
+     deleteResource & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} Main Table, General Needs, Important Resources, Health Services, To Help \\
+\hline
+     addNewCity & \textbf{Create:} - \\
+     & \textbf{Read:} - \\
+     & \textbf{Update:} Main Table, Important Resources \\
+     & \textbf{Delete:} - \\
+\hline
+     showInfrastructureInCity & \textbf{Create:} - \\
+     & \textbf{Read:} Important Resources, Main Table \\
+     & \textbf{Update:} - \\
+     & \textbf{Delete:} - \\
+\hline
+
+\end{tabularx}
+\caption{The New Operations on Data Table}
+\label{tab:opOnData}
+\end{table}
+
+\newpage
+
+\subsection{Deployment View}
+\subsubsection{Stakeholders' Uses of This View}
+The deployment view for afetbilgi.com shows how the system's various components, now including disaster recovery resources, disaster preparation resources, share on social media, damaged infrastructure information, and psychological support resources, are distributed across the hardware infrastructure and how they interact with each other. The system is hosted on a cloud-based infrastructure ensuring scalability, redundancy, and distributed architecture, necessary for managing the increased complexity due to the new functions.
+
+This view is highly useful for system administrators who manage the runtime platform. It offers guidance for the installation, configuration, and maintenance of the new system components, such as the social media sharing function or the infrastructure damage information module. By providing insights into the dependencies and interactions between these components, this view enables administrators to manage the system effectively and efficiently.
+
+Developers, too, can leverage this view to understand the deployment structure, which greatly influences how they design, develop, and test the system's components. With the new functionalities introduced, developers can build components that effectively utilize the resources, manage potential limitations, and seamlessly integrate with the rest of the system. Understanding the deployment environment also aids developers in ensuring that the system remains resilient, scalable, and efficient despite the increased complexity.
+
+\subsubsection{Deployment Diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{DeploymentDiagram2.jpg}
+\caption{Deployment Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\newpage
+
+\begin{itemize}
+    \item \textbf{AWS Cloud Infrastructure:} This continues to serve as the main hosting platform for the system, providing robust, scalable, and secure cloud services.
+    
+    \item \textbf{Data Buckets:} This component continues to serve as the primary data storage for the system, now also receiving shareable data generated by the new Social Media Content Generator component in GitHub.
+    
+    \item \textbf{Athena:} AWS Athena continues to enable the direct querying of data stored in the Data Buckets.
+    
+    \item \textbf{CloudWatch:} Amazon CloudWatch continues to provide monitoring and observability services for the system.
+    
+    \item \textbf{Cloudflare:} Cloudflare continues to provide connection to the internet, with likely enhancements to security and speed.
+    
+    \item \textbf{GitHub:} Now, besides hosting the Data Parser and PDF Generator components, GitHub also hosts the new Social Media Content Generator component. It continues to provide the data sheet through Data Collectors and Validators.
+    
+    \item \textbf{Data Parser:} This component continues to retrieve and process data from the data sheet provided by Data Collectors and Validators. It now also serves as a dependency for the new Social Media Content Generator component, suggesting it provides data that the new component uses.
+    
+    \item \textbf{PDF Generator:} This component continues to likely generate PDF documents for reports or other user-downloaded data.
+    
+    \item \textbf{Data Collectors and Validators:} These components continue to gather and validate data before it's sent to the Data Parser in GitHub.
+    
+    \item \textbf{Social Media Content Generator:} This is a new component added to GitHub in the improved system. It generates content in a shareable format, likely tailored for dissemination through social media platforms. It depends on the Data Parser for data, which it then formats and sends to the Data Buckets in AWS.
+\end{itemize}
+
+\newpage
+
+\subsection{Design Rationale}
+\begin{enumerate}
+    \item \textbf{Context View:}
+
+    The context view was extended to include additional external entities that the enhanced website now interacts with, such as social media platforms and sources of infrastructure damage information. The system context diagram has been revised to reflect these new interactions. A major enhancement in this area is the ability to share resources and information on social media platforms, which increases the reach of the website and allows users to raise awareness within their networks about important disaster-related issues. The addition of a module for viewing damaged infrastructure information also represents a significant enhancement, as it allows users to get real-time updates on the state of infrastructure in disaster-hit areas, further enhancing the system's usefulness.
+
+    \item \textbf{Functional View:}
+
+    The functional view was expanded to include additional components that support new functions such as disaster preparation and recovery resources, the ability to share information on social media, and modules for viewing damaged infrastructure information and accessing psychological support resources. The component diagrams and internal interface class diagrams have been updated to reflect these additions. The enriched functionality offers a more comprehensive suite of services to the users, making the website a more holistic platform for disaster management.
+
+    \item \textbf{Information View:}
+    
+    The information view has been updated to accommodate the new entities associated with the added features. Class diagrams now include entities representing disaster recovery and preparation resources, shared social media posts, infrastructure damage reports, and psychological support resources. By carefully mapping the relationships between these entities, we ensure that the data flows seamlessly within the system, supporting the website's extended functionality.
+    
+    \item \textbf{Deployment View:}
+    
+    The deployment view remains largely the same, as the website continues to be hosted on a cloud-based platform to ensure high availability and performance. However, the deployment diagram has been updated to indicate the system's expanded communications with external entities such as social media platforms, and websites providing infrastructure damage information and psychological support resources. This enhances the system's ability to fetch, display, and update data, resulting in an improved user experience.
+\end{enumerate}
+
+\end{document}

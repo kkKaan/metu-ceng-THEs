@@ -1,0 +1,1208 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+\usepackage[left=2.54cm, top=2.54cm, bottom=2.54cm, right=2.54cm]{geometry}
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    \huge
+    \textbf{SOFTWARE REQUIREMENTS SPECIFICATIONS}\\
+    \vspace{1cm}
+    \textbf{afetbilgi.com}
+
+    \vspace{1cm}
+    \large
+    Kaan Karaçanta - 2448546\\
+    Kerem Recep Gür - 2448462\\
+    \vspace{1cm}
+    \today
+    \vspace*{\fill}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+
+\section{Introduction} 
+This Software Requirements Specification (SRS) document outlines the functional requirements for the development of "afetbilgi.com" which is a comprehensive disaster response platform primarily aimed at earthquake survivors in Turkey. The website facilitates multilingual access, enabling users to view vital resources and information tailored to their selected city. 
+
+\subsection{Purpose of the System}
+The purpose of this system, as detailed in the Software Requirements Specification (SRS) document, is to provide a reliable, user-friendly, and multilingual platform for disaster survivors, particularly those affected by earthquakes in Kahramanmaraş on the 6\textsuperscript{th} of February. By offering localized and relevant information, afetbilgi.com aims to empower survivors with the resources they need to navigate challenging post-disaster scenarios. The system encompasses three main sections, including "General Needs", "Important Resources", and "Health Services", to address a wide range of survivor requirements. Ultimately, the platform aims to streamline the recovery process by centralizing essential information, fostering community resilience, and facilitating access to life-saving resources and services.
+
+\subsection{Scope}
+The afetbilgi.com system operates within the context of disaster response and recovery, particularly targeting earthquake survivors in Turkey. As a web-based platform, afetbilgi.com serves as an intermediary platform to ease the connection of the aids and survivors. Thus, in the scope of this website, there are, primarily, external links or application programming interfaces. To explain it better, this website has the following functions and the information in its scope, providing any aid in the disaster area, crucial places, or ways to reach vital organizations and their sources.
+The scope of afetbilgi.com can be listed as:
+
+\begin{itemize}
+  \item  The software product, afetbilgi.com, will centralize and streamline access to vital post-disaster resources and information for earthquake survivors in Turkey.
+  \item The application of the afetbilgi.com software includes providing a reliable, user-friendly, and multilingual platform for disaster survivors. The system aims to foster community resilience and facilitate access to life-saving resources and services, contributing to the overall recovery process.
+  \item The scope of the system being developed encompasses centralized access to essential post-disaster resources and information tailored to individual cities in Turkey. 
+  \item The system supports business activities by facilitating access to localized resources, connecting survivors with service providers, and fostering resilience in affected communities.
+  \item Users shall be able to reach to the sources of these aids without any problem or view them in the map if their location is available.
+\end{itemize}
+The followings are not in the scope of this system:
+\begin{itemize}
+  \item Emergency response coordination, this website is not designed to act as an emergency response coordination platform, nor does it provide real-time disaster management or command and control functionalities.
+  \item Personalized user accounts, the afetbilgi.com website does not support the creation of personalized user accounts to track individual needs or preferences.
+  \item Direct communication with emergency services, the website does not facilitate direct communication with emergency services, such as reporting incidents or requesting immediate assistance.
+\end{itemize}
+
+\subsection{System Overview}
+
+\subsubsection{System Perspective} 
+afetbilgi.com is a platform created for the benefit of disaster victims after the earthquake and facilitating post-disaster processes. On this platform, disaster survivors can find map support and crucial phone numbers, and similar resources that may be needed after the earthquake. This site has different functions like city selection, language selection, active hospitals, and so on. These functions work together with a database structure within afetbilgi.com that contains addresses, telephones, and various data to meet various needs, which are constantly updated by the admins. Along with Google Maps support, it also includes features such as finding places where disaster victims may need to go.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{OldContextDiagram.jpeg}
+    \caption{Context Diagram for afetbilgi.com}
+    \label{Context Diagram for afetbilgi.com}
+\end{figure}
+
+\subsubsection{System Functions}
+Functionalities or use cases of afetbilgi.com and their summaries are in the following table, more detailed explanation of these use cases may be found at \hyperref[sec:Func]{section 3.2}.
+
+\newpage
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|p{9cm}|}
+        \hline
+        Function & Summary \\
+        \hline
+        City Selection & Allows users to select a city in Turkey to access localized disaster recovery information and resources, tailoring the content to the chosen city's unique needs. \\
+        \hline
+        Language Selection & Provides the option to switch the website's content to different languages, ensuring accessibility for a wider audience. \\
+        \hline
+        Map Functionality & Offers an interactive map displaying essential resources, such as hospitals, food distribution centers, and temporary accommodations, to aid survivors. \\
+        \hline
+        Active Hospitals & Displays a list of operational hospitals with external links or map redirects to view their locations. \\
+        \hline
+        Crucial Telephone Numbers &  Lists vital phone numbers for emergency services, assistance, and other crucial organizations. \\
+        \hline
+        Transportation Aid & Provides useful links to free transportation options for disaster survivors. \\
+        \hline
+        Gas Stations & Shows information about operational gas stations, including locations and contact number. \\
+        \hline
+        Food Distribution Center & Provides information about free food options and the links to reach them. \\
+        \hline
+        Open Pharmacies &  Lists open pharmacies with numbers, addresses and map redirects for location details. \\
+        \hline
+        Temporary Accommodation Places & Displays information and contains links on available temporary accommodations, such as shelters, for disaster survivors. \\
+        \hline
+    \end{tabular}
+    \caption{Functions' Summaries}
+    \label{Functions' Summaries}
+\end{table}
+
+\subsubsection{Stakeholder Characteristics}
+The afetbilgi.com website caters to a diverse group of users with varying characteristics that may influence usability. The following general stakeholder characteristics are considered for the design and development of the website:
+
+\begin{itemize}
+    \item End Users - Help Seekers: This group consists of disaster survivors who seek assistance, resources, and information. They may have limited technical expertise and be under high stress. Their educational level and experience may vary significantly. Some users may have disabilities or temporary impairments due to the disaster.
+    \item End Users - Help Providers: This group includes volunteers, NGOs, and government agencies involved in disaster relief efforts. They may have a wide range websites or information to be provided to afetbilgi.com, like locations, phone numbers and organizational websites. 
+    \item System Administrators: These users are responsible for the maintenance, monitoring, and management of the website. They possess strong technical expertise, familiarity with the platform, and an understanding of the importance of keeping the system running smoothly during disaster events. Also, they are responsible for the security and accessibility of the website during any disaster or high demand.
+    \item Data Validators: This group of users ensures the accuracy and reliability of information provided on the website. They may include subject matter experts, such as emergency management professionals or representatives from local authorities. Their primary goal is to review and validate the data displayed on the website to ensure its accuracy and relevance.
+\end{itemize}
+
+\subsubsection{Limitations}
+\begin{itemize}
+    \item \textbf{Regulatory requirements and policies:} The website must comply with local and national data protection and privacy regulations, which may limit the types of user data that can be collected and stored although there are no user account functionality, it is about cookies or same kind of information.
+    \item \textbf{Hardware limitations:} There are no specific hardware limitations, but the website should be optimized for various devices, screen sizes, and internet connections to ensure accessibility for all users.
+    \item \textbf{Interfaces to other applications:} The website may need to integrate with external APIs for mapping services, Google Maps, emergency communication systems, for the users that are connecting via mobile devices, the numbers should be able to be opened and shown by telephone application in that device, or other relevant resources. These integrations may impose limitations on response times and data formats.
+    \item \textbf{Parallel operation:} There are no specific parallel operation limitations for this website since it is a simple website parallel operations should not be a problem.
+    \item \textbf{Audit functions:} The website should have audit trails and logging mechanisms to track user activities, changes in data, and system errors. These functions may impose storage and performance limitations; besides, this collection of information may create some regulatory requirements.
+    \item \textbf{Control functions:} To ensure data integrity and system security, administrative controls and access levels must be put in place, potentially restricting the options for user interfaces and capabilities.
+    \item \textbf{Higher-order language requirements:} There are no such restrictions to create a website like afetbilgi.com.
+    \item \textbf{Signal handshake protocols:} No specific signal handshake protocols are applicable to this website.
+    \item \textbf{Quality requirements:} Even during disastrous events, the website must have high availability and dependability. These criteria might restrict the infrastructure and hosting companies available.
+    \item \textbf{Criticality of the application:} The website's critical nature requires robust disaster recovery and backup mechanisms, potentially limiting infrastructure and hosting choices.
+    \item \textbf{Safety and security considerations:} Ensuring user safety and data security may limit the choice of technologies, third-party integrations, and hosting providers.
+    \item \textbf{Physical/mental considerations:} The website should be created with the knowledge that during disasters, people may be under stress, have limited time, or have cognitive difficulties. This might have an impact on design decisions like prioritizing accessibility features and simplifying the user interface.
+    \item \textbf{Limitations sourced from other systems:} Real-time requirements, such as providing up-to-date source information, might limit the choice of data sources and appropriate APIs.
+\end{itemize}
+
+\newpage
+
+\subsection{Definitions}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|p{11cm}|}
+        \hline
+        Term & Definition \\
+        \hline
+        API & Application Programming Interface \\
+        \hline
+        Cookies & Small pieces of data stored on the user's device while browsing the site are commonly used to remember user preferences, login status or user activity. \\
+        \hline
+        Google Maps & A web mapping service developed by Google that provides satellite imagery, aerial photography, street maps, and interactive navigational tools. \\
+        \hline
+        NGO & Non-Governmental Organization \\
+        \hline
+        SRS & Software Requirements Specifications \\
+        \hline
+    \end{tabular}
+    \caption{Definitions}
+    \label{Definitions}
+\end{table}
+
+\newpage
+
+\section{References}
+\textbf{This document is written with respect to the specifications of the document below:} 
+\vspace{0.2cm}
+
+29148-2018 - ISO/IEC/IEEE International Standard - Systems and software engineering – Life cycle processes – Requirements engineering.
+
+\vspace{0.5cm}
+\textbf{Other Sources:}
+\vspace{0.2cm}
+
+[1] A. Keleş et al., "afetbilgi.com," GitHub Repository, 2023. [Source Code]. Available: 
+
+https://github.com/alpaylan/afetbilgi.com
+
+\newpage
+
+\section{Specific Requirements}
+
+\subsection{External Interfaces}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{OldExternalInterface.jpeg}
+    \caption{External Interfaces Class Diagram for afetbilgi.com}
+    \label{External Interfaces Class Diagram}
+\end{figure}
+
+\newpage
+
+\subsection{Functions}
+\label{sec:Func}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{OldUseCase.jpeg}
+    \caption{Use-case Diagram for afetbilgi.com}
+    \label{Use-case Diagram}
+\end{figure}
+
+\newpage
+
+%%%%%%%%%%%%%% CITY SELECTION %%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+\toprule
+Use-case Name & City Selection \\
+\midrule
+Actors & Users, Website, Database \\
+\midrule
+Description & User selects a city to view specific information about disaster-related resources and services. \\
+\midrule
+Data & Depends on the selected city, gives website functionalities and the data related to them under general needs, important resources, health services categories. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see the services available on a selected city. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the city selection drop-down menu. \\
+Step 3: & User selects a city. \\
+Step 4: & The website displays information and the functions \\
+        & specific to the selected city.\\
+\end{tabular} \\
+\midrule
+Alternative Flow &  - \\
+\midrule
+Exception Flow & - \\  
+\midrule
+Post-conditions & The information for the preferred city is shown. \\
+
+\bottomrule
+\end{tabularx}
+\label{table:exiting_store}
+\caption{City Selection Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%% LANGUAGE SELECTION %%%%%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case Name & Language Selection \\
+\midrule
+Actors & Users, Website, Database \\
+\midrule
+Description & User selects a preferred language for the website content. \\
+\midrule
+Data & Information on the website become available in the selected language. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see the website on the selected language. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the language selection drop-down menu. \\
+Step 3: & User selects a language Turkish, English, Kurdi \\
+        & or Arabic. \\
+Step 4: & The website displays content in the selected language. \\
+
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & - \\ 
+\midrule
+Post-conditions & The language of the website content is the selected one. \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Language Selection Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%% MAP FUNCTIONALITY %%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case Name & Map Functionality \\
+\midrule
+Actors & Users, Website, Google Maps \\
+\midrule
+Description & User views a map displaying disaster-related resources and services based on their selected city. \\
+\midrule
+Data & Map information for selected city, if the user did not select any, the map will be centered at Kahramanmaraş. The map shows critical places like pharmacies, hospitals or food distribution centers. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see the available services on the map, or look around the disaster area. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the map section of the website. \\
+Step 3: & The website displays a map with relevant. \\ 
+         & information based on the selected city \\
+         & on a different tab. \\
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & - \\
+\midrule
+Post-conditions & The user can view a map with relevant disaster-related resources and services and move around to see different cities or resources. \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Map Functionality Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%% ACTIVE HOSPITALS %%%%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Active Hospitals \\
+\midrule
+Actors & Users, Website, Database, External Websites \\
+\midrule
+Description & User views a list of active hospitals and its addresses for the selected city, if no city was selected, it will show the general information and allows the user to select a city from the disaster area. \\
+\midrule
+Data & Information of active hospitals for a selected city, or the list of active hospitals for all of the disaster area.  \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see active hospitals on a selected city or the lists of active hospitals. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the active hospitals section of \\ 
+         & the website. \\
+Step 3: & The website displays the list of active hospitals \\
+         & based on the selected city. \\
+\end{tabular} \\
+\midrule
+Alternative Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 3: & The website shows all of the hospitals at the \\
+         & disaster area.
+\end{tabular} \\
+\midrule
+Exception Flow & - \\
+
+\midrule
+Post-conditions & After the hospital list is shown, if a city was selected before, the user can click on the locations of a hospital on the list, and this link opens Google Maps on a new tab. If there is the whole list of hospitals, the user can click on the list and the website opens Google Docs document that shows the hospital list. \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Active Hospitals Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%% CRUCIAL TELEPHONE NUMBERS %%%%%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Crucial Telephone Numbers \\
+\midrule
+Actors & Users, Website, Database \\
+\midrule
+Description & User views a list of crucial telephone numbers for emergency and disaster-related services. \\
+\midrule
+Data & The phone numbers of disaster related units and, what this number will be used for, is shown at the website. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see the telephone numbers of disaster-related institutions. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the crucial phone numbers section of \\ 
+         & the website. \\
+Step 3: & The website shows the list of phone numbers. \\
+
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & - \\
+\midrule
+Post-conditions & The numbers in the list is clickable, if an user uses a mobile phone to connect the website, a click to a selected number can open the phone application in the user's phone, and pastes the number to it. \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Crucial Telephone Numbers Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%% Transportation Aid %%%%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Transportation Aid \\
+\midrule
+Actors & Users, Website, External Websites, Database \\
+\midrule
+Description & User views information about transportation aid available in the selected city. \\
+\midrule
+Data & Valid transformation aids, websites to reach them and their expiration date. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see the available transportation aids, their websites and validity date information. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the transportation aid section of \\ 
+         & the website. \\
+Step 3: & The website shows the list of available ways of  \\
+& transportation and details (links, costs etc.). 
+
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & - \\
+\midrule
+Post-conditions & User can access the external links of companies and governmental organizations' websites so that they can access the tickets, and contact information. \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Transportation Aid Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%% Gas Stations %%%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Gas Stations \\
+\midrule
+Actors & Users, Website, Google Maps \\
+\midrule
+Description & User views a list of gas stations operating in the selected city or district around disaster area. \\
+\midrule
+Data & Information of districts that have available gas stations around the disaster area.\\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see the available gas stations for a selected district or city. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the gas stations section of \\ 
+         & the website. \\
+Step 3: & User accesses the city selection drop-down menu.  \\
+Step 4: & User selects the city.   \\
+Step 5: & User accesses the district selection menu.  \\
+Step 6: & User selects the district.  \\
+Step 7: & The website displays the available gas  \\
+        &stations in the district. \\
+
+
+
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & User can access the related information about available gas stations (contact, location etc.)
+when locations link is clicked the user can access the available gas stations on map.\\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Gas Stations Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{GasStationsSequence.jpg}
+    \caption{Sequence Diagram for Gas Stations Use-case}
+    \label{seq diagram gas}
+\end{figure}
+
+\newpage
+%%%%%%%%%% Food Distribution Center %%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Food Distribution Center \\
+\midrule
+Actors & Users, Website, External Websites, Google Maps \\
+\midrule
+Description & User views a list of food distribution centers in the selected city. \\
+\midrule
+Data & Information of food distribution centers, or institutions donating food. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to see available food distribution centers. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the food distribution section of \\ 
+         & the website. \\
+Step 3: & User accesses the city selection drop-down menu.  \\
+Step 4: & User selects the city.   \\
+Step 5: & User accesses the district selection menu.  \\
+Step 6: & User selects the district.  \\
+Step 7: & The website displays the available food  \\
+        &distribution centers in the district. \\
+
+\end{tabular} \\
+\midrule
+Alternative Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 3: & User accesses the links and more information  \\
+    &about food options.  \\
+Step 4: & User accesses the external websites given.  \\
+
+
+\end{tabular} \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & After user selects city, and district users can access several food distribution centers, and the related information (location etc.). Also user can see more general external links to food providers before selection period.  \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Food Distribution Center Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{StateDiagramFood.jpeg}
+    \caption{State Diagram for Food Distribution Center Use-case}
+    \label{Food dist diagram}
+\end{figure}
+
+\newpage
+%%%%%%%%%% Open Pharmacies %%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Open Pharmacies \\
+\midrule
+Actors & Users, Website, External Websites, Google Maps \\
+\midrule
+Description & User views a list of open pharmacies in the selected city. \\
+\midrule
+Data & Information of list of open pharmacies. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to find an open pharmacy. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the open pharmacies section of \\ 
+         & the website. \\
+Step 3: & User accesses the city selection drop-down menu.  \\
+Step 4: & User selects the city.   \\
+Step 5: & User accesses the district selection menu.  \\
+Step 6: & User selects the district.  \\
+Step 7: & The website displays the available pharmacies \\
+        &in the district. \\
+
+\end{tabular} \\
+\midrule
+Alternative Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 3: & User accesses the external link and more information  \\
+    &about available pharmacies.  \\
+Step 4: & User accesses the external websites given.  \\
+Step 5: & User accesses the map of available pharmacies.  \\
+
+
+\end{tabular} \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & After user selects city, and district users can access several open pharmacies, and the related information (location etc.). Also user can see a link before selection period redirecting to a map application showing available pharmacies at the disaster area.   \\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Open Pharmacies Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{OpenPharmaciesActivityDiagram.jpg}
+    \caption{Activity Diagram for Open Pharmacies Use-case}
+    \label{act diagram open pharm}
+\end{figure}
+
+\newpage
+%%%%%%%%%%% Temporary Accommodation Places %%%%%%%%%%%%%%
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Temporary Accommodation Places \\
+\midrule
+Actors & Users, Website, External Websites, Google Maps \\
+\midrule
+Description & User views a list of temporary accommodation places in the selected city or all available places around disaster area. \\
+\midrule
+Data & The information about temporary accommodation places or any website and external link to find a place. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to find an available temporary accommodation place. \\
+\midrule
+Basic Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User accesses the temporary accommodation Places  \\ 
+         & section of the website. \\
+Step 3: & User accesses the city selection drop-down menu.  \\
+Step 4: & User selects the city.   \\
+Step 5: & The website displays the temporary accommodation \\
+         & Places and the related information (location etc.). \\
+
+\end{tabular} \\
+\midrule
+Alternative Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 3: & User accesses the external links and more information  \\
+         & about temporary accommodation places.  \\
+Step 4: & User accesses the external websites given.  \\
+
+
+\end{tabular} \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & After user selects city users can access several available places to stay, and the related information (location etc.). Also user can see several links before selection period redirecting to several websites of the companies and governmental organizations that help finding temporary accommodation place at the disaster area.\\
+\bottomrule
+\end{tabular}
+\label{table:exiting_store}
+\caption{Temporary Accommodation Places Description}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\subsection{Usability Requirements}
+
+\begin{itemize}
+    \item The website should have a clear and intuitive layout, allowing users to quickly understand how to navigate and find the information they need.
+    \item On-boarding materials, such as help sections or tutorials, should be provided to assist new users in becoming familiar with the website's features and functionalities.
+    \item The website should load quickly, with minimal delays in displaying content or executing user actions.
+    \item Commonly accessed information or features should be easy to locate, requiring minimal clicks or steps from the user.
+    
+    \item The website should minimize the likelihood of user errors through clear instructions, validation, and confirmation steps.
+    \item When errors occur, informative error messages should be displayed, guiding users on how to resolve the issue.
+    \item Users should be able to undo or redo actions when necessary, allowing them to recover from mistakes.
+    \item The website should have a visually appealing and professional design that instills trust and confidence in users.
+    \item User feedback should be collected and analyzed to continually improve the website's usability and address any issues.
+    \item Content should be regularly updated and maintained to ensure that users receive accurate and up-to-date information on disaster preparedness and response.
+\end{itemize}
+
+
+\subsection{Performance Requirements}
+\begin{itemize}
+    \item The website should load within 2-3 seconds for users on average, ensuring a smooth browsing experience.
+    \item Dynamic content, such as maps and real-time updates, should load and update with minimal delays.
+    \item The website should be able to handle an increasing number of concurrent users without significant degradation in performance, especially during peak times or in the event of a disaster.
+    \item The website should ensure that users can access the site whenever they need it.
+    \item In case of server failures, redundancy measures should be in place to prevent extended downtime.
+    \item The website should have robust error-handling mechanisms to ensure stability and prevent unexpected crashes or data loss.
+    \item Regular backups of user data and website content should be performed to enable swift recovery in the event of a failure.
+    \item The website should ensure that data transmitted between the server and users is protected from unauthorized access or tampering, using secure communication protocols such as HTTPS.
+    \item The website should be optimized to minimize resource consumption, such as bandwidth, server processing power, and storage.
+    \item The website should be compatible with a variety of devices and browsers, ensuring a consistent user experience across different platforms.
+    \item The website should be responsive, adapting its layout and functionality to suit the user's screen size and input method.
+\end{itemize}
+
+\newpage
+
+\subsection{Logical Database Requirements}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{OldLogicalDb.jpeg}
+    \caption{Logical Database Requirements Class Diagram for afetbilgi.com}
+    \label{Logical Database Requirements Class Diagram for afetbilgi.com}
+\end{figure}
+
+\begin{itemize}
+    \item The website's database is made of one major table, and this table is the one that are being updated by administrators or resource providers.
+    \item Depending on the selected section of the main page of the website, the shown information on the website is changing.
+    \item The 4 main sections on the main page have the tables that have some of the columns of that main table of the database.
+\end{itemize}
+
+\newpage
+
+\subsection{Design Constraints}
+\begin{itemize}
+    \item The website should be developed using a modern, widely-supported technology stack to ensure compatibility with various devices, browsers, and operating systems.
+    \item The chosen technology stack should also provide ample support for future expansion and feature development.
+    \item The website must comply with all applicable data protection and privacy regulations, such as the General Data Protection Regulation (GDPR) for users in the European Union.
+    \item The website should also adhere to any industry-specific regulations and guidelines related to the dissemination of disaster information and emergency management.
+    \item The development timeline for afetbilgi.com should be adhered to in order to launch the website within the planned schedule. This may require prioritizing essential features and functionality for the initial launch, with additional features and improvements planned for subsequent updates.
+    \item The website should be designed to offer an intuitive and easy-to-use interface, catering to users with varying levels of technical expertise and familiarity with disaster information.
+\end{itemize}
+
+\subsection{System Attributes}
+\begin{enumerate}
+
+\item Reliability:
+\begin{itemize}
+    \item The website should be designed to ensure consistent uptime and availability, minimizing the likelihood of service interruptions or downtime.
+    \item The disaster information provided on the website should be accurate, up-to-date, and sourced from reliable sources.
+\end{itemize}
+
+\item Availability:
+\begin{itemize}
+    \item The website should utilize a scalable hosting solution capable of handling sudden spikes in user traffic during disaster events.
+    \item Checkpoint, recovery, and restart mechanisms should be implemented to ensure minimal downtime during unexpected system failures.
+    \item  System performance should be monitored proactively to identify and address potential issues before they affect system availability.
+\end{itemize}
+
+\item Security:
+\begin{itemize}
+    \item Regular security audits and updates should be conducted to ensure the ongoing protection of the website's infrastructure.
+    \item Data integrity checks for critical variables shall be implemented to prevent data corruption.
+\end{itemize}
+
+\item Maintainability:
+\begin{itemize}
+    \item The website should be designed with a modular and well-documented architecture, allowing for easy updates, feature additions, and bug fixes.
+    \item A clear maintenance plan should be in place, detailing regular updates, performance monitoring, and issue resolution.
+\end{itemize}
+
+\newpage
+
+\item Portability:
+\begin{itemize}
+    \item The website should be adaptable to changing user needs, disaster information requirements, and technology trends.
+    \item The architecture should be designed in a way that allows for the easy addition or modification of features and integrations.
+\end{itemize}
+
+\item User Experience:
+\begin{itemize}
+    \item The website should be designed with a focus on usability, ensuring that users can easily find, access, and understand the disaster information they need.
+\end{itemize}
+
+\item Scalability:
+\begin{itemize}
+    \item The website should be able to handle a growing number of users, traffic, and content without compromising performance or functionality.
+    \item The architecture should be designed to accommodate future growth, both in terms of features and the volume of information provided.
+\end{itemize}
+
+\end{enumerate}
+
+\subsection{Supporting Information}
+afetbilgi.com is an online platform providing disaster preparedness resources for a wide audience, including tailored content for individual needs. The platform features maps, and interactive guides, as well as fostering a community for knowledge-sharing and collaboration. afetbilgi.com constantly updates its content and encourages user feedback to ensure accurate and reliable information.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Suggestions to improve the existing system}
+
+\subsection{System Perspective}
+The improved afetbilgi.com system will continue to serve as a comprehensive platform for disaster victims, while expanding its functionality to provide more robust support for disaster preparation, response, and recovery. The system will maintain its existing relationships with external services such as Google Maps and the internal database containing addresses, phone numbers, and other vital information. The new features and enhancements will be integrated within the current system to help the users in disaster situations.
+
+\begin{enumerate}[label=(\alph*)]
+
+    \item \textbf{System interfaces:}
+    The system will maintain its current interfaces with external services such as Google Maps and the internal database. New interfaces may be established to support additional features, such as infrastructure damage information and its integration with local government systems.
+    
+    \item \textbf{User interfaces:}
+    The user interface will be enhanced to accommodate the new features and to improve accessibility for diverse users. This will include a dedicated section for disaster recovery resources, expanded content libraries, and accessible design elements such as larger text sizes and screen reader compatibility.
+    
+    \item \textbf{Hardware interfaces:}
+    No significant changes to hardware interfaces are anticipated. The system will continue to be accessible through standard web browsers on various devices, such as computers, tablets, and smartphones.
+    
+    \item \textbf{Software interfaces:}
+    The system may require additional software interfaces to support new features, such as showing infrastructure damage on website as external links or on map. These interfaces will be defined as the features are developed and implemented.
+    
+    \item \textbf{Communications interfaces:}
+    The system will maintain its current communication interfaces, such as local network protocols, to ensure efficient and reliable data exchange between the system, users, and external services.
+    
+    \item \textbf{Memory:}
+    As new features and enhancements are added, the memory requirements of the system may increase. However, these changes are expected to be minimal and should not significantly impact the system's performance or resource usage.
+    
+    \item \textbf{Operations:}
+    The operations of the system will be expanded to support the new features and enhancements. This may include additional user-initiated operations, data processing support functions, and backup and recovery operations related to the new features.
+    
+    \item \textbf{Site adaptation requirements:}
+    The site adaptation requirements will remain largely unchanged, with any new data or initialization sequences specific to a given site or mission incorporated as needed to support the new features.
+    
+    \item \textbf{Interfaces with services:}
+    The system may require additional interfaces with external services, such as local government systems or mental health support services, to support the new features and enhancements. These interfaces will be defined and documented during the development and implementation of the new features.
+
+\end{enumerate}
+
+\newpage
+
+In summary, the improved afetbilgi.com system will continue to provide valuable support for disaster victims while expanding its scope to address a wider range of disaster-related needs. This includes the addition of new features, such as disaster recovery resources, infrastructure damage information, and psychological support resources. These enhancements will be integrated within the existing system architecture to provide better website for survivors.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{NewContextDiagram.jpeg}
+    \caption{Context diagram for the Improved afetbilgi.com}
+    \label{Context Diagram for improved afetbilgi.com}
+\end{figure}
+
+\newpage
+
+\subsection{External Interfaces}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{NewExternalInterface.jpeg}
+    \caption{External Interfaces Class Diagram for Improved afetbilgi.com}
+    \label{External Interfaces Class Diagram for Improved afetbilgi.com}
+\end{figure}
+
+\newpage
+
+\subsection{Functions}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{NewUseCase.jpeg}
+    \caption{Use-case diagram for the improved afetbilgi.com}
+    \label{Use-case diagram for improved afetbilgi.com}
+\end{figure}
+
+%%%%%%%%%%%%% Disaster Recovery Resources %%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Disaster Recovery Resources \\
+\midrule
+Actors & Users, Website, External Websites \\
+\midrule
+Description & User accesses a dedicated section on the website containing resources and information to help navigate the recovery process after a disaster. \\
+\midrule
+Data & Information on property damage assessment, insurance claims, and financial assistance. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User needs guidance on disaster recovery. \\
+\midrule
+Basic Flow &
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User navigates to the disaster recovery \\
+        & resources section. \\
+Step 3: & User selects a specific resource or topic. \\
+Step 4: & The website displays the relevant information \\
+        & and resources. \\
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & The website shows the necessary information about the recovery process, or redirects user to external websites that might help the user. \\
+\bottomrule
+\end{tabular}
+\label{table:disaster_recovery_resources}
+\caption{Disaster Recovery Resources Description}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%% Disaster Preparation Resources %%%%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Disaster Preparation Resources \\
+\midrule
+Actors & Users, Website, External Websites \\
+\midrule
+Description & User accesses a dedicated section on the website containing resources and information to help prepare for a disaster. \\
+\midrule
+Data & Information on disaster types, helpful external websites, locations, and preparation guidelines. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User needs guidance on disaster preparation. \\
+\midrule
+Basic Flow &
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User navigates to the disaster preparation \\
+        & resources section. \\
+Step 3: & User selects a specific disaster or topic. \\
+Step 4: & The website displays the relevant information \\
+        & and resources. \\
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & The related resources are shown on the website, users can access the data provided by the website or click to external links to go to the websites where they may find more resources, educative contents, or preparation techniques available externally. \\
+\bottomrule
+\end{tabular}
+\label{table:disaster_preparation_resources}
+\caption{Disaster Preparation Resources Description}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%% Share on Social Media %%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Share on Social Media \\
+\midrule
+Actors & Users, Website, Social Media Platforms \\
+\midrule
+Description & User shares specific disaster-related information or resources from the website on their social media accounts. \\
+\midrule
+Data & Shared content URL, title, and description. \\
+\midrule
+Preconditions & The user is viewing a piece of content or resource they want to share. \\
+\midrule
+Stimulus & User wants to share useful information or resources with their social network. \\
+\midrule
+Basic Flow &
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User navigates to the desired content \\
+        & or resource. \\
+Step 3: & User clicks the "Share on Social Media" \\
+        & button. \\
+Step 4: & The website displays a list of available \\
+        & social media platforms. \\
+Step 5: & User selects their preferred social media \\
+        & platform. \\
+Step 6: & User is redirected to the selected \\
+        & platform's sharing interface, with the \\
+        & content pre-populated. \\
+Step 7: & User shares the content on their social \\
+        & media account. \\
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & The content or resource is shared on the user's social media account, potentially reaching a wider audience and increasing awareness about the topic. \\
+\bottomrule
+\end{tabular}
+\label{table:share_on_social_media}
+\caption{Share on Social Media Description}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{SequenceShareOnSocial.jpeg}
+    \caption{Sequence Diagram for Share on Social Media Use-case}
+    \label{Sequence Diagram for Share on Social Media Use-case}
+\end{figure}
+
+%%%%%%%%%%%% Infrastructure Damage Information %%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Damaged Infrastructure \\
+\midrule
+Actors & Users, Website, Local Government Systems or Websites \\
+\midrule
+Description & User views damaged infrastructure, such as blocked or unusable roads, downed power lines, gas lines, and downed electricity through a module on the website. \\
+\midrule
+Data & Damaged infrastructure reports, location, and governmental or company websites that shows or verifies these damaged infrastructure. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to take information about damaged infrastructure on disaster area. \\
+\midrule
+Basic Flow &
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User navigates to the damaged infrastructure \\
+         & module. \\
+Step 3: & User views existing damaged infrastructure \\
+         & reports. \\
+Step 4: & User can click on external links that redirects \\
+         & the user to the websites that damage information \\
+         & is found.
+\end{tabular} \\
+\midrule
+
+Alternative Flow & 
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 4: & User can use map functionality to view the \\
+         & damage on infrastructure on the affected \\
+         & areas on map. \\
+\end{tabular} \\
+
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & Damaged infrastructure has been viewed on website, on governmental sources or on the map according to the information provided by these sources. \\
+\bottomrule
+\end{tabular}
+\label{table:damaged_infrastructure}
+\caption{Damaged Infrastructure Description}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{ActDiagramDamageInfra.jpeg}
+    \caption{Activity Diagram for Damaged Infrastructure Use-case}
+    \label{Activity Diagram for Damaged Infrastructure Use-case}
+\end{figure}
+
+\newpage
+
+%%%%%%%%%%%% Psychological Support Resources %%%%%%%%%%%%%
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}l p{10cm}}
+\toprule
+Use-case name & Psychological Support Resources \\
+\midrule
+Actors & Users, Website, External Websites \\
+\midrule
+Description & User accesses resources and tools on the website to address the psychological impact of disasters, such as coping strategies, stress management techniques, and access to mental health professionals and support groups. \\
+\midrule
+Data & Sources of information on coping strategies, stress management techniques, mental health professionals, and support groups. \\
+\midrule
+Preconditions & - \\
+\midrule
+Stimulus & User wants to find free and approved resources to take psychological support after a disaster. \\
+\midrule
+Basic Flow &
+\begin{tabular}[t]{@{}l@{\ }l}
+Step 1: & User opens the website. \\
+Step 2: & User navigates to the psychological support \\
+         & and resources section. \\
+Step 3: & User selects a specific resource. \\
+Step 4: & The website displays the relevant information \\
+         & and resources. \\
+\end{tabular} \\
+\midrule
+Alternative Flow & - \\
+\midrule
+Exception Flow & -\\
+\midrule
+Post-conditions & User has accessed the necessary psychological support resources, as external links, to cope with the impact of a disaster. \\
+\bottomrule
+\end{tabular}
+\label{table:psychological_support_resources}
+\caption{Psychological Support Resources Description}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{StateDiagramPsycho.jpeg}
+    \caption{State Diagram for Psychological Support Resources Use-case}
+    \label{State Diagram for Psychological Support Resources Use-case}
+\end{figure}
+
+\newpage
+
+\subsection{Usability Requirements}
+Considering the new functions added to the system, the following updated usability requirements are crucial for all stakeholders, particularly considering that some user groups might be under stressful conditions. The previous usability requirements remain mostly unchanged, with a focus on clear and intuitive layout, on-boarding materials, quick website load times, minimal clicks, error prevention and recovery, visually appealing design, user feedback, and regular content updates.
+
+\begin{itemize}
+    \item In addition to providing accurate and up-to-date information on disaster preparedness and response, the system should also include resources on disaster recovery and psychological support.
+    \item The new functions and resources should be easily accessible and integrated within the website's existing user-friendly interface.
+    \item The system should provide an easy-to-use option for users to share information and resources on their preferred social media platforms, allowing them to raise awareness and help others in need, but, of course, for this "Share on Social Media" use-case, the users need an account for the platform they want to share.
+    \item The system should be designed to accommodate users with disabilities, such as incorporating screen reader compatibility, larger text sizes, and alternative navigation methods.
+\end{itemize}
+
+\subsection{Performance Requirements}
+Considering the new functions added to the system, the following performance requirements, by keeping the previous requirements, are essential to ensure a smooth user experience, particularly during times of increased demand or in the event of a disaster:
+
+\begin{itemize}
+    \item Dynamic content, such as infrastructure damage reporting, disaster preparation and recovery resources, and psychological support resources, should load and update with minimal delays.
+    \item Map functionality on viewing damaged infrastructure should not be slowed while there are many places and different kinds of damages on the map.
+\end{itemize}
+
+\newpage
+
+\subsection{Logical Database Requirements}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{NewLogicalDb.jpeg}
+    \caption{Logical Database Requirements Class Diagram for Improved afetbilgi.com}
+    \label{Logical Database Requirements Class Diagram for Improved afetbilgi.com}
+\end{figure}
+
+The requirements for the improved version of the logical database is shown above with yellow elements. In those yellow parts, not all of them are new, the new ones are at the end of them and main table is also updated respectively.
+
+\newpage    
+
+\subsection{Design Constraints}
+The updated design constraints consider the new functions to be added to the website and the implications of these additions for development, regulation compliance, and usability, although, there are not much differences with the previous version. By addressing these updated design constraints, the system will be able to accommodate new features and improvements while maintaining compliance with relevant regulations and ensuring an intuitive and accessible user experience.
+
+\begin{itemize}
+    \item The website must comply with all applicable data protection and privacy regulations, such as the General Data Protection Regulation (GDPR) for users in the European Union, particularly when handling sensitive information related to infrastructure damage and psychological support resources.
+    \item The website should adhere to any industry-specific regulations and guidelines related to the dissemination of disaster information, emergency management, and the provision of psychological support and resources.
+    \item The chosen technology stack should provide ample support for future expansion and feature development, including the integration of disaster preparation and recovery resources, psychological support resources, and improved accessibility options.
+\end{itemize}
+
+\subsection{System Attributes}
+
+\begin{enumerate}
+
+\item Reliability:
+\begin{itemize}
+    \item The website should ensure the accuracy and reliability of infrastructure damage reporting and psychological support resources by verifying and validating the information before it is published or forwarded to the relevant authorities.
+\end{itemize}
+
+\item Availability:
+\begin{itemize}
+    \item The website should be able to handle increased user traffic during important crisis situations, ensuring that infrastructure damage reporting, psychological support resources, and other new functions are available and performant at all times.
+\end{itemize}
+
+\item Security:
+\begin{itemize}
+    \item The website shall maintain a secure environment for users accessing infrastructure damages and psychological support resources, preserving personal information and ensuring the confidentiality of sensitive data.
+\end{itemize}
+
+\item Maintainability:
+\begin{itemize}
+    \item The website should be designed to allow for easy updates and maintenance of new features, such as the infrastructure damage reporting system, psychological support resources, and social media sharing capabilities.
+\end{itemize}
+
+\end{enumerate}
+
+\subsection{Supporting Information}
+By incorporating new elements like infrastructure damage viewing, psychological support sources, and social media sharing capabilities, afetbilgi.com has developed into a comprehensive online platform for disaster preparedness, response, and recovery. The website is still committed to giving users current, accurate, and trustworthy information while developing a community that will be there for them in difficult times. afetbilgi.com is dedicated to empowering people and communities to better prevent disasters, respond to them, and recover from them. As a result, it is constantly improving and expanding its content and features.
+
+
+
+\end{document}
