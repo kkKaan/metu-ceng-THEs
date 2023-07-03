@@ -1,0 +1,64 @@
+kpop.play(kpop) returns 1500
+kpop.energy 80
+kpop.talent 50
+kpop.fans 250
+kpop.play(jazz) returns 325
+kpop.energy 64
+kpop.talent 50
+kpop.fans 250
+kpop.play(rock) returns 285
+kpop.energy 51
+kpop.talent 50
+kpop.fans 250
+kpop.play(metal) returns 252
+kpop.energy 40
+kpop.talent 50
+kpop.fans 250
+jazz.play(kpop) returns 345
+jazz.energy 23
+jazz.talent 100
+jazz.fans 440
+jazz.play(jazz) returns 468
+jazz.energy 21
+jazz.talent 100
+jazz.fans 440
+jazz.play(rock) returns 454
+jazz.energy 19
+jazz.talent 100
+jazz.fans 440
+jazz.play(metal) returns 819
+jazz.energy 17
+jazz.talent 100
+jazz.fans 440
+rock.play(kpop) returns 310
+rock.energy 90
+rock.talent 50
+rock.fans 120
+rock.play(jazz) returns 456
+rock.energy 81
+rock.talent 50
+rock.fans 120
+rock.play(rock) returns 525
+rock.energy 72
+rock.talent 50
+rock.fans 120
+rock.play(metal) returns 672
+rock.energy 64
+rock.talent 50
+rock.fans 120
+metal.play(kpop) returns 450
+metal.energy 84
+metal.talent 50
+metal.fans 400
+metal.play(jazz) returns 902
+metal.energy 70
+metal.talent 50
+metal.fans 400
+metal.play(rock) returns 1125
+metal.energy 58
+metal.talent 50
+metal.fans 400
+metal.play(metal) returns 690
+metal.energy 48
+metal.talent 50
+metal.fans 400

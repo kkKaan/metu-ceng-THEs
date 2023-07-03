@@ -1,0 +1,4 @@
+rock1.play(rock2) returns 420
+rock1.energy 18
+rock1.talent 150
+rock1.fans 120

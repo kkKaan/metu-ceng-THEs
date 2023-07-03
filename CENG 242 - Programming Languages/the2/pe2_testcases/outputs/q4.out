@@ -1,0 +1,5 @@
+(0,EmptyTree)
+(0,Leaf Cavern [Fight (Enemy "Zombie" 5 10)])
+(2,Node NarrowPassage [Treasure (Gold 10)] [Leaf UndergroundRiver [Fight (Enemy "Orc" 10 5)],Leaf Cavern [Fight (Enemy "Goblins" 5 2)]])
+(3,Node NarrowPassage [Treasure (Gold 10)] [Leaf UndergroundRiver [Fight (Enemy "Orc" 10 5)],Node Cavern [Fight (Enemy "Goblins" 5 2)] [Leaf UndergroundRiver [Fight (Enemy "Lich" 25 50)]]])
+(4,Node NarrowPassage [Treasure (Gold 10)] [Node UndergroundRiver [Fight (Enemy "Orc" 10 5)] [Leaf SlipperyRocks [Fight (Enemy "Necromancer" 30 100)]],Node Cavern [Fight (Enemy "Goblins" 5 2)] [Leaf UndergroundRiver [Fight (Enemy "Lich" 25 50)]]])

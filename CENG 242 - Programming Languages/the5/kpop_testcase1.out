@@ -1,0 +1,4 @@
+kpop1.play(kpop2) returns 2200
+kpop1.energy 8
+kpop1.talent 100
+kpop1.fans 1000

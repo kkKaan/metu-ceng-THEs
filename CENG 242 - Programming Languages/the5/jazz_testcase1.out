@@ -1,0 +1,4 @@
+jazz1.play(jazz2) returns 525
+jazz1.energy 47
+jazz1.talent 120
+jazz1.fans 150

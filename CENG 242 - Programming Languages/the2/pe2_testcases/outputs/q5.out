@@ -1,0 +1,5 @@
+ans1 = EmptyTree
+ans2 = Leaf Cavern [Fight (Enemy "Zombie" 5 10)]
+ans3 = Leaf SlipperyRocks [Fight (Enemy "Necromancer" 30 100)]
+ans4 = Node NarrowPassage [Treasure (Gold 10)] [Node Cavern [Fight (Enemy "Goblins" 5 2),Treasure (Gold 15)] [Leaf UndergroundRiver [Fight (Enemy "Lich" 25 50)]]]
+ans5 = Leaf NarrowPassage [Treasure (Gold 10),Treasure (Potion 5)]
