@@ -1,0 +1,24 @@
+# b ext2_unlink_inode
+# b ext2_free_dir_entry 
+# b ext2_remove_directory
+# b ext2_unlink_block
+# b ext2_unlink_inode
+b src/ext2fs_inode.c:127
+# b src/ext2fs_block.c:62
+b src/main.c:47
+b src/ext2fs_entry.c:182
+# b _ext2_block_traverse__direct_block
+# b src/ext2fs_inode.c:130
+# b ext2_alloc_block
+# b ext2_get_dir_entry_count
+# b ext2_read_entry_dir
+# b _ext2_block_traverse__direct_block
+# b src/main.c:65
+# b src/ext2fs_inode.c:100
+# b src/ext2fs_inode.c:142
+# b ext2_free_inode
+# b ext2_read_block_group_descriptor
+# b ext2_read_dir_entry
+# b _ext2_direct_search_dir_entry
+# b _ext2_double_indirect_search_dir_entry
+r pred.img mkdir /a
