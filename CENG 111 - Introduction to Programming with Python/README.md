@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This README file provides an overview and detailed explanation of the program for the "the2" assignment. The program simulates the movement of individuals on a grid while considering factors such as infection transmission, masks, and probabilities.
+This file provides an overview and explanation of the programs for the "the2" and "the3" assignments.
 
 ## Specifications
 
