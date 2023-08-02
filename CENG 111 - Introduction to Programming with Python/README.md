@@ -37,12 +37,12 @@ The code provided for "the3" (`the3.py`) constructs a parts inventory using a tr
 ## Usage
 
 ### the2 Assignment
-1. Implement the `new_move()` and `new_move_helper()` functions in the `the2.py` file.
+1. Call the `new_move()` and `new_move_helper()` functions in the `the2.py` file.
 2. Use the provided constants, probabilities, and movement types to calculate next positions and infection statuses.
 3. Ensure the `evaluator.py` file is available for data retrieval.
 
 ### the3 Assignment
-1. Implement the functions `tree_creator()`, `rootFinder()`, `makeTheRootFirst()`, `calculate_price()`, `required_parts()`, and `stock_check()` in the `the3.py` file.
+1. Call the functions `tree_creator()`, `rootFinder()`, `makeTheRootFirst()`, `calculate_price()`, `required_parts()`, and `stock_check()` in the `the3.py` file.
 2. Construct a tree structure based on the given nested list format.
 3. Calculate the total price, extract required parts, and perform stock checks using the provided algorithms.
 
@@ -54,4 +54,4 @@ The code provided for "the3" (`the3.py`) constructs a parts inventory using a tr
 
 ---
 
-For any further assistance or clarification, feel free to reach out to the assignment's instructors.
+For any further assistance or clarification, feel free to reach out to me.
