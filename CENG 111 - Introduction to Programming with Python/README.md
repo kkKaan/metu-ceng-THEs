@@ -43,7 +43,7 @@ The code provided (`the2.py`) implements the simulation using the `new_move()` f
 
 ## Usage
 
-1. Implement the `new_move()` function in the `the2.py` file.
+1. Use the `new_move()` function in the `the2.py` file.
 2. Follow the given structure of the `new_move_helper()` function to calculate next positions and infection statuses.
 3. Ensure that the `get_data()` function from `evaluator.py` is available to retrieve input data.
 4. The code automatically follows the specified looping order for evaluating movements and infections.
@@ -55,6 +55,3 @@ The code provided (`the2.py`) implements the simulation using the `new_move()` f
 - The `evaluator.py` file is used to obtain input data and is not submitted.
 - Ensure the code follows the assignment's constraints and specifications for proper evaluation.
 
----
-
-For any further assistance or clarification, feel free to reach out to the assignment's instructors.
