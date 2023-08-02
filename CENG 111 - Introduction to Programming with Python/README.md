@@ -48,8 +48,7 @@ The code provided for "the3" (`the3.py`) constructs a parts inventory using a tr
 
 ## Notes
 
-- The provided `evaluator.py` file is used for data retrieval in both assignments and should not be submitted.
-- Ensure that the implementations adhere to the assignment specifications and requirements.
+- The provided `evaluator.py` file is used for data retrieval in both assignments.
 - These explanations provide a high-level overview; please refer to the actual code comments for detailed information.
 
 ---
