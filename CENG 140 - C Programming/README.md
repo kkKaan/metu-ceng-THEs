@@ -1,8 +1,10 @@
-# Assignment 1: Individual Image Processing
+# C Programming Assignments
+
+## Assignment 1
 
 This README file provides an overview and explanation of the code for the "Individual Image Processing" assignment.
 
-## Table of Contents
+### Table of Contents
 
 1. [Introduction](#introduction)
 2. [Code Overview](#code-overview)
@@ -43,3 +45,5 @@ To use this code, follow these steps:
 - Use this code to perform individual image processing operations such as flood fill, copy-paste, and rotation.
 
 For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact the author.
+
+
