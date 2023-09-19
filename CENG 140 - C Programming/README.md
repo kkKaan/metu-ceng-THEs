@@ -99,4 +99,52 @@ To use this code, follow these steps:
 
 - Use this code to analyze and compute statistics for race data, including lap times and driver rankings.
 
-For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact the author.
+## Assignment 3
+
+This README file provides explanations for the C Programming course Assignment 3.
+
+### Table of Contents
+
+1. [Introduction](#introduction)
+2. [Code Overview](#code-overview)
+3. [Usage](#usage)
+4. [Notes](#notes)
+
+### Introduction
+
+The provided code (`the3.c`) focuses on managing apartments and flats within them. It provides functionalities to add flats, merge apartments, relocate flats, and more.
+
+### Code Overview
+
+The code for this assignment includes the following key elements:
+
+- **Structures:** The code defines structures for apartments and flats, including properties like apartment name, maximum bandwidth, flat ID, and initial bandwidth.
+
+- **Apartment Management:** It offers functions to add and remove apartments, as well as merge apartments to combine their maximum bandwidths.
+
+- **Flat Management:** The code provides functions to add flats to apartments, make flats empty, and relocate flats to the same or different apartments.
+
+- **Data Validation:** The code includes checks to ensure that flats do not exceed apartment bandwidth limits and can be relocated effectively.
+
+### Usage
+
+To use this code, follow these steps:
+
+1. Compile the code using a C compiler (e.g., `gcc -o the3 the3.c`).
+
+2. Run the compiled executable (`./the3`).
+
+3. Enter input data as specified by the program to manage apartments and flats.
+
+4. The program will execute the requested operations and display relevant information.
+
+### Notes
+
+- The code contains comments and explanations to help you understand its functionality.
+
+- Ensure that the input data adheres to the specified format for successful execution.
+
+- Use this code to manage apartments, add and relocate flats, and efficiently utilize available bandwidth.
+
+For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact me.
+
