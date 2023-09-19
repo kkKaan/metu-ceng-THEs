@@ -1,4 +1,4 @@
-# Assignment: Individual Image Processing
+# Assignment 1: Individual Image Processing
 
 This README file provides an overview and explanation of the code for the "Individual Image Processing" assignment.
 
