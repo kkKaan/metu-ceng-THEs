@@ -2,7 +2,7 @@
 
 ## Assignment 1
 
-This README file provides an overview and explanation of the code for the "Individual Image Processing" assignment.
+This README file provides explanations for C Programming course assignments.
 
 ### Table of Contents
 
