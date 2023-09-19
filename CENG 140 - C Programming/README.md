@@ -11,11 +11,11 @@ This README file provides an overview and explanation of the code for the "Indiv
 3. [Usage](#usage)
 4. [Notes](#notes)
 
-## Introduction
+### Introduction
 
 The provided code (`the1.c`) is designed for individual image processing. It includes functions to manipulate pixel values in a 2D array representing an image.
 
-## Code Overview
+### Code Overview
 
 The code for this assignment includes the following key elements:
 
@@ -29,7 +29,7 @@ The code for this assignment includes the following key elements:
 
 - **Final Image Output:** After applying the selected operation, the code prints the modified image's pixel values to the console.
 
-## Usage
+### Usage
 
 To use this code, follow these steps:
 
@@ -38,7 +38,7 @@ To use this code, follow these steps:
 3. Enter input data as specified by the program.
 4. The program will execute the selected operation and display the modified image.
 
-## Notes
+### Notes
 
 - The code contains comments and explanations to help you understand its functionality.
 - Ensure that the input data adheres to the specified format for successful execution.
@@ -46,4 +46,4 @@ To use this code, follow these steps:
 
 For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact the author.
 
-
+## Assignment 2
