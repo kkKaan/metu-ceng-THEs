@@ -2,7 +2,7 @@
 
 ## Assignment 1
 
-This README file provides explanations for the first C Programming course assignment.
+This section provides explanations for the first C Programming course assignment.
 
 ### Table of Contents
 
@@ -13,7 +13,7 @@ This README file provides explanations for the first C Programming course assign
 
 ### Introduction
 
-The provided code (`the1.c`) is designed for individual image processing. It includes functions to manipulate pixel values in a 2D array representing an image.
+The provided code (`the1.c`) is designed for basic image processing. It includes functions to manipulate pixel values in a 2D array representing an image.
 
 ### Code Overview
 
@@ -21,7 +21,7 @@ The code for this assignment includes the following key elements:
 
 - **Global Variables:** Various global variables are declared to store pixel coordinates, colors, and other parameters used for image processing.
 
-- **Neighbour Finder Function:** The `neighbourFinder` function recursively identifies suitable positions in the image based on color matching and boundaries.
+- **Neighbor Finder Function:** The `neighbourFinder` function recursively identifies suitable positions in the image based on color matching and boundaries.
 
 - **Main Function:** The `main` function reads input data, including image pixel values, operation type, and parameters for various image processing operations. It then executes the selected operation.
 
@@ -33,7 +33,7 @@ The code for this assignment includes the following key elements:
 
 To use this code, follow these steps:
 
-1. Compile the code using a C compiler (e.g., `gcc -o the1 the1.c`).
+1. Compile the code using a C compiler (e.g., `gcc the1.c -o the1`).
 2. Run the compiled executable (`./the1`).
 3. Enter input data as specified by the program.
 4. The program will execute the selected operation and display the modified image.
@@ -46,7 +46,7 @@ To use this code, follow these steps:
 
 ## Assignment 2
 
-This README file provides explanations for the C Programming course Assignment 2.
+This section provides explanations for the C Programming course Assignment 2.
 
 ### Table of Contents
 
@@ -83,7 +83,7 @@ The code for this assignment includes the following key elements:
 
 To use this code, follow these steps:
 
-1. Compile the code using a C compiler (e.g., `gcc -o race functions.c`).
+1. Compile the code using a C compiler (e.g., `gcc functions.c -o race`).
 
 2. Run the compiled executable (`./race`).
 
@@ -101,7 +101,7 @@ To use this code, follow these steps:
 
 ## Assignment 3
 
-This README file provides explanations for the C Programming course Assignment 3.
+This section provides explanations for the C Programming course Assignment 3.
 
 ### Table of Contents
 
@@ -130,7 +130,7 @@ The code for this assignment includes the following key elements:
 
 To use this code, follow these steps:
 
-1. Compile the code using a C compiler (e.g., `gcc -o the3 the3.c`).
+1. Compile the code using a C compiler (e.g., `gcc the3.c -o the3`).
 
 2. Run the compiled executable (`./the3`).
 
