@@ -2,7 +2,7 @@
 
 ## Assignment 1
 
-This README file provides explanations for C Programming course assignments.
+This README file provides explanations for the first C Programming course assignment.
 
 ### Table of Contents
 
@@ -33,8 +33,8 @@ The code for this assignment includes the following key elements:
 
 To use this code, follow these steps:
 
-1. Compile the code using a C compiler (e.g., `gcc -o image_processing the1.c`).
-2. Run the compiled executable (`./image_processing`).
+1. Compile the code using a C compiler (e.g., `gcc -o the1 the1.c`).
+2. Run the compiled executable (`./the1`).
 3. Enter input data as specified by the program.
 4. The program will execute the selected operation and display the modified image.
 
@@ -47,3 +47,58 @@ To use this code, follow these steps:
 For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact the author.
 
 ## Assignment 2
+
+This README file provides explanations for the C Programming course Assignment 2.
+
+### Table of Contents
+
+1. [Introduction](#introduction)
+2. [Code Overview](#code-overview)
+3. [Usage](#usage)
+4. [Notes](#notes)
+
+### Introduction
+
+The provided code (`functions.c`) is designed for handling race data, including sector times, lap times, and driver statistics. It involves reading and processing data to extract valuable insights.
+
+### Code Overview
+
+The code for this assignment includes the following key elements:
+
+- **Input Processing:** The code reads input data regarding sector times, lap times, and driver positions during races.
+
+- **Data Structures:** The code employs dynamic memory allocation to store and manipulate sector times, lap times, and driver positions efficiently.
+
+- **Lap Time Calculation:** It calculates lap times by summing up sector times for each driver.
+
+- **Fastest Lap Finder:** The code determines the driver with the fastest lap by comparing lap times across all drivers.
+
+- **Driver Statistics:** It computes statistics for each driver, such as the lap number with the fastest time.
+
+- **Sorting Functions:** The code includes functions for sorting arrays, such as the selection sort and reversal of arrays.
+
+- **Points Calculation:** It calculates total points earned by each driver across multiple races.
+
+- **Season Ranking:** The code ranks drivers based on their total points for the entire season.
+
+### Usage
+
+To use this code, follow these steps:
+
+1. Compile the code using a C compiler (e.g., `gcc -o race functions.c`).
+
+2. Run the compiled executable (`./race`).
+
+3. Enter input data as specified by the program, including sector times, lap times, and driver positions.
+
+4. The program will execute the calculations and display results such as the fastest lap, driver statistics, and season rankings.
+
+### Notes
+
+- The code contains comments and explanations to help you understand its functionality.
+
+- Ensure that the input data adheres to the specified format for successful execution.
+
+- Use this code to analyze and compute statistics for race data, including lap times and driver rankings.
+
+For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact the author.
