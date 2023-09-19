@@ -44,8 +44,6 @@ To use this code, follow these steps:
 - Ensure that the input data adheres to the specified format for successful execution.
 - Use this code to perform individual image processing operations such as flood fill, copy-paste, and rotation.
 
-For any questions or clarifications regarding the code, please refer to the assignment guidelines or contact the author.
-
 ## Assignment 2
 
 This README file provides explanations for the C Programming course Assignment 2.
