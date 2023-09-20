@@ -2,7 +2,7 @@
 
 This project implements a music streaming service called MusicStream and a linked list data structure. It is divided into two main parts: Music Streaming Service (50 pts) and Linked List Implementation (50 pts).
 
-## Linked List Implementation (50 pts)
+## Linked List Implementation
 
 The linked list data structure used in this assignment is implemented as the class template `LinkedList` with the template argument `T`, which is used as the type of data stored in the nodes. The node of the linked list is implemented as the class template `Node` with the template argument `T`, which is the type of data stored in nodes. `Node` class is the basic building block of the `LinkedList` class.
 
@@ -83,7 +83,7 @@ The linked list data structure used in this assignment is implemented as the cla
 21. `LinkedList<T> &operator=(const LinkedList<T> &rhs);`
     - This is the overloaded assignment operator. You should remove all nodes in the linked list and then create new nodes by copying the nodes in the given `rhs` and insert those new nodes into the linked list.
 
-## Music Streaming Service Implementation (50 pts)
+## Music Streaming Service Implementation
 
 The music streaming service in this assignment is implemented as the class `MusicStream`. `MusicStream` class has four `LinkedList` objects in its private data field (namely `profiles`, `artists`, `albums`, and `songs`) with the types `Profile`, `Artist`, `Album`, and `Song`, respectively. These four `LinkedList` objects keep the profiles, artists, albums, and songs of the music streaming service. `Profile` class represents the users of the music streaming service. `Artist`, `Album`, and `Song` classes represent the artists, albums, and songs of the music streaming service, respectively.
 
