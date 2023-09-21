@@ -29,6 +29,9 @@ The communication between the controller and game entities (bombers and bombs) i
 The controller manages an arbitrary number of bombers and bombs. It creates and reads requests from multiple file descriptors, ensuring that it does not block on any socket. To achieve this, it can use system calls like select() or poll() to check if there is data to be read on a particular socket.
 
 1- Select/Poll on Bomb Sockets: Check for data on the socket file descriptors of bombs. For all file descriptors that are ready (have data), read the bomb's request and serve it.
+
 2- Select/Poll on Bomber Sockets: Check for data on the socket file descriptors of active bombers. For all file descriptors that are ready (have data), read the bomber's request and serve it.
+
 3- Sleep for 1 Millisecond: To prevent CPU hogging, pause briefly between iterations.
+
 4- Wait for Bombs to Finish: Continue to process messages until there is only one active bomber left or until all bombers are informed about the game's outcome. Wait for any remaining bombs to explode and finish the game.
