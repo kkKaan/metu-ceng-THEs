@@ -1,6 +1,6 @@
 # Graph and HashTable Implementations, Maps Application
 
-This repository contains C++ implementations of a Graph class and a HashTable class.
+This repository contains C++ implementations of a Graph class and a HashTable class and an application using these classes.
 
 ## Graph Implementation (Graph.cpp)
 
