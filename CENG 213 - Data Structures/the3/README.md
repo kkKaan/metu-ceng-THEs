@@ -1,6 +1,6 @@
 # Graph and HashTable Implementations, Maps Application
 
-This repository contains C++ implementations of a Graph class and a HashTable class and an application using these classes.
+This repository contains C++ implementations of a Graph class, a HashTable class and an application using these classes.
 
 ## Graph Implementation (Graph.cpp)
 
@@ -26,8 +26,20 @@ The `KeyedHashTable` class is a generic hash table implementation that maps keys
 
 - **Printing**: The `Print` method displays the contents of the hash table.
 
-Explore the source code for detailed information about each class and its methods.
+## METUMaps Implementation (METUMaps.cpp)
 
-For usage examples and more details, refer to the source code files `Graph.cpp` and `HashTable.cpp`.
+The `METUMaps` class is designed for journey planning. It provides functionality to plan and manage journeys between locations on the map. Key features of the implementation include:
+
+- **Journey Management**: You can start a journey, set a starting location, set a destination, and update your location during the journey.
+
+- **Caching Routes**: The class caches routes for faster access when calculating routes between locations.
+
+- **Error Handling**: It includes error handling for cases like attempting to change destinations during a journey or starting a journey without valid locations.
+
+- **Display Information**: The class provides information about the current journey, including the current location and estimated time left.
+
+Explore the source code files (`Graph.cpp`, `HashTable.cpp`, and `METUMaps.cpp`) for detailed information about each class and its methods.
+
+For usage examples and more details, refer to the source code.
 
 If you have any questions or need further assistance, feel free to reach out.
