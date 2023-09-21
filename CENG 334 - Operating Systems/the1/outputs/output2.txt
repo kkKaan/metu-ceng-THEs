@@ -1,0 +1,48 @@
+IN pid:5362 mid:0 bomber start.
+OUT pid:5362 mid:0 bomber new location:(15, 15).
+IN pid:5361 mid:0 bomber start.
+OUT pid:5361 mid:0 bomber new location:(10, 10).
+IN pid:5362 mid:1 bomber see.
+OUT pid:5362 mid:1 bomber vision object count:0.
+IN pid:5361 mid:1 bomber see.
+OUT pid:5361 mid:1 bomber vision object count:0.
+IN pid:5362 mid:2 bomber move target:(14, 15).
+OUT pid:5362 mid:0 bomber new location:(14, 15).
+IN pid:5361 mid:2 bomber move target:(9, 10).
+OUT pid:5361 mid:0 bomber new location:(9, 10).
+IN pid:5362 mid:2 bomber move target:(13, 15).
+OUT pid:5362 mid:0 bomber new location:(13, 15).
+IN pid:5361 mid:2 bomber move target:(8, 10).
+OUT pid:5361 mid:0 bomber new location:(8, 10).
+IN pid:5362 mid:2 bomber move target:(12, 15).
+OUT pid:5362 mid:0 bomber new location:(12, 15).
+IN pid:5361 mid:2 bomber move target:(7, 10).
+OUT pid:5361 mid:0 bomber new location:(7, 10).
+IN pid:5362 mid:3 bomber plant bomb interval:2500 radius:3.
+OUT pid:5362 mid:2 bomber plant bomb result:1.
+IN pid:5361 mid:3 bomber plant bomb interval:2500 radius:3.
+OUT pid:5361 mid:2 bomber plant bomb result:1.
+IN pid:5362 mid:1 bomber see.
+OUT pid:5362 mid:1 bomber vision object count:1.
+object1 position:(12,15) type:1.
+IN pid:5361 mid:1 bomber see.
+OUT pid:5361 mid:1 bomber vision object count:1.
+object1 position:(7,10) type:1.
+IN pid:5362 mid:2 bomber move target:(12, 14).
+OUT pid:5362 mid:0 bomber new location:(12, 14).
+IN pid:5361 mid:2 bomber move target:(7, 9).
+OUT pid:5361 mid:0 bomber new location:(7, 9).
+IN pid:5362 mid:2 bomber move target:(12, 13).
+OUT pid:5362 mid:0 bomber new location:(12, 13).
+IN pid:5361 mid:2 bomber move target:(7, 8).
+OUT pid:5361 mid:0 bomber new location:(7, 8).
+IN pid:5361 mid:2 bomber move target:(7, 7).
+OUT pid:5361 mid:0 bomber new location:(7, 7).
+IN pid:5362 mid:2 bomber move target:(12, 12).
+OUT pid:5362 mid:0 bomber new location:(12, 12).
+IN pid:5366 mid:4 bomb explode.
+IN pid:5361 mid:3 bomber plant bomb interval:2500 radius:3.
+OUT pid:5361 mid:4 bomber wins.
+IN pid:5362 mid:3 bomber plant bomb interval:2500 radius:3.
+OUT pid:5362 mid:3 bomber died.
+IN pid:5367 mid:4 bomb explode.

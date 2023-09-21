@@ -1,0 +1,54 @@
+IN pid:5226 mid:0 bomber start.
+OUT pid:5226 mid:0 bomber new location:(5, 5).
+IN pid:5227 mid:0 bomber start.
+OUT pid:5227 mid:0 bomber new location:(10, 10).
+IN pid:5226 mid:1 bomber see.
+OUT pid:5226 mid:1 bomber vision object count:0.
+IN pid:5227 mid:1 bomber see.
+OUT pid:5227 mid:1 bomber vision object count:0.
+IN pid:5226 mid:2 bomber move target:(4, 5).
+OUT pid:5226 mid:0 bomber new location:(4, 5).
+IN pid:5227 mid:2 bomber move target:(9, 10).
+OUT pid:5227 mid:0 bomber new location:(9, 10).
+IN pid:5226 mid:2 bomber move target:(3, 5).
+OUT pid:5226 mid:0 bomber new location:(3, 5).
+IN pid:5227 mid:2 bomber move target:(8, 10).
+OUT pid:5227 mid:0 bomber new location:(8, 10).
+IN pid:5226 mid:2 bomber move target:(2, 5).
+OUT pid:5226 mid:0 bomber new location:(2, 5).
+IN pid:5227 mid:2 bomber move target:(7, 10).
+OUT pid:5227 mid:0 bomber new location:(7, 10).
+IN pid:5226 mid:3 bomber plant bomb interval:5000 radius:3.
+OUT pid:5226 mid:2 bomber plant bomb result:1.
+IN pid:5227 mid:3 bomber plant bomb interval:5000 radius:3.
+OUT pid:5227 mid:2 bomber plant bomb result:1.
+IN pid:5226 mid:1 bomber see.
+OUT pid:5226 mid:1 bomber vision object count:1.
+object1 position:(2,5) type:1.
+IN pid:5227 mid:1 bomber see.
+OUT pid:5227 mid:1 bomber vision object count:1.
+object1 position:(7,10) type:1.
+IN pid:5226 mid:2 bomber move target:(2, 6).
+OUT pid:5226 mid:0 bomber new location:(2, 6).
+IN pid:5227 mid:2 bomber move target:(6, 10).
+OUT pid:5227 mid:0 bomber new location:(6, 10).
+IN pid:5226 mid:2 bomber move target:(2, 7).
+OUT pid:5226 mid:0 bomber new location:(2, 7).
+IN pid:5227 mid:2 bomber move target:(5, 10).
+OUT pid:5227 mid:0 bomber new location:(5, 10).
+IN pid:5226 mid:2 bomber move target:(2, 8).
+OUT pid:5226 mid:0 bomber new location:(2, 8).
+IN pid:5227 mid:2 bomber move target:(4, 10).
+OUT pid:5227 mid:0 bomber new location:(4, 10).
+IN pid:5226 mid:3 bomber plant bomb interval:5000 radius:3.
+OUT pid:5226 mid:2 bomber plant bomb result:1.
+IN pid:5227 mid:3 bomber plant bomb interval:5000 radius:3.
+OUT pid:5227 mid:2 bomber plant bomb result:1.
+IN pid:5231 mid:4 bomb explode.
+IN pid:5226 mid:1 bomber see.
+OUT pid:5226 mid:3 bomber died.
+IN pid:5227 mid:1 bomber see.
+OUT pid:5227 mid:4 bomber wins.
+IN pid:5232 mid:4 bomb explode.
+IN pid:5233 mid:4 bomb explode.
+IN pid:5234 mid:4 bomb explode.
