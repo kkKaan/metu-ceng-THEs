@@ -1,4 +1,4 @@
-# Airline Reservation System
+# Airline Reservation System and Binary Search Tree Implementation
 
 This project implements an Airline Reservation System with features such as managing passengers, flights, and ticket bookings.
 
