@@ -1,6 +1,6 @@
-# Multi-Threaded Matrix Operation Assignment
+# Multi-Threaded Matrix Operation
 
-This assignment focuses on developing multi-threaded applications and synchronization techniques using C or C++. You will be implementing two different matrix operations with multiple threads performing them on four matrices. The results will be printed after synchronization using mutexes, semaphores, and condition variables.
+This assignment focuses on developing multi-threaded applications and synchronization techniques using C or C++. There are two different matrix operations with multiple threads performing them on four matrices. The results will be printed after synchronization using mutexes, semaphores, and condition variables.
 
 ## Project Code Overview
 
@@ -54,4 +54,3 @@ Make sure to deallocate memory and destroy semaphores to prevent resource leaks.
 
 ---
 
-This assignment will provide hands-on experience with multi-threading and synchronization in C/C++. Follow the provided code structure, complete the missing parts, and test your implementation. Good luck with your assignment!
