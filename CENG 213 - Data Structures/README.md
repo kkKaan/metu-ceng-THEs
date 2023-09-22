@@ -1,1 +1,1 @@
-Data Structures take-home exams, for more information explore the directories.
+Data Structures take-home exams, for more information you can explore the directories.
