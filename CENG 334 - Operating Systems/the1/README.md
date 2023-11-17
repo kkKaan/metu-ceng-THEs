@@ -1,1 +1,1 @@
-[This is on a different repository, check out here](https://github.com/kkKaan/a-simple-bomberman-game-with-IPC)
+This project is on a different repository, check out [here](https://github.com/kkKaan/a-simple-bomberman-game-with-IPC).
