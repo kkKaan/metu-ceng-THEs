@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[tableaux]{prooftrees}
+\renewcommand*\linenumberstyle[1]{(#1)}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{qtree}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name: Kaan Karaçanta \\
+
+ID: 2448546 \\
+
+
+% 1. Let D(x) be “x is a dog”, C(x) be “x is a cat”, and Friends(x, y) be “x and y are friends”, where x
+% and y represent animals.
+% Translate the following into English statements.
+% (a) ∀x.(C(x) ⇒ ∃y.(D(y) ∧ Friends(x, y)))
+% (b) ∃x.(C(x) ∧ ∀y.(D(y) ⇒ Friends(x, y)))
+\section*{Answer 1}
+
+\subsection*{\text{(a)}}
+
+\[ \forall x.\left(C(x) \Rightarrow \exists y.\left(D(y) \land \text{Friends}(x, y)\right)\right) \] \\
+
+"For every animal x, if x is a cat, then there exists an animal y such that y is a dog and x and y are friends."
+
+This sentence can be further simplified as follows: 
+"Every cat has at least one dog friend.
+
+\subsection*{\text{(b)}}
+
+\[ \exists x.\left(C(x) \land \forall y.\left(D(y) \Rightarrow \text{Friends}(x, y)\right)\right) \] \\
+
+"There exists an animal x such that x is a cat and for every animal y, if y is a dog, then x and y are friends."
+
+This sentence can be further simplified as follows:
+"There exists a cat that every dog is its friend."
+
+
+% 2. Show whether the following relational logic sentences are valid, contingent, or unsatisfiable.
+% (a) ∃x.(∀y.p(x, y) ⇒ p(z, z))) ⇔ (∃x.p(x, x) ⇒ ∃y.p(y, y)
+% (b) (∀x.(p(x) ∨ q(x)) ⇒ (∃y.p(y) ⇒ (p(x) ⇒ ∀y.p(y)))
+% (c) ∃y.(p(y) ⇒ ∃x.q(x, y)) ⇒ ¬∃x.q(y, x)
+\section*{Answer 2}
+
+\subsection*{\text{(a)}}
+
+\[ \quad \exists x.\left(\forall y.p(x, y) \Rightarrow p(z, z)\right) \Leftrightarrow \left(\exists x.p(x, x) \Rightarrow \exists y.p(y, y)\right) \] 
+
+This sentence is valid. The left side of the equivalence is equivalent to the right side. The left side claims that there exists an $x$ such that for all $y$, $p(x,y)$ implies $p(z,z)$. The right side claims that if there exists an $x$ such that $p(x,x)$ holds, then there exists a $y$ such that $p(y,y)$ holds. These two sides will give the same results. If there exists an $x$ such that $p(x,x)$ holds, then for all $y$, $p(x,y)$ holds. Hence, there exists a $y$ such that $p(y,y)$ holds. If there exists a $y$ such that $p(y,y)$ holds, then for all $y$, $p(x,y)$ holds. Hence, there exists an $x$ such that $p(x,x)$ holds.
+\newpage
+
+\subsection*{\text{(b)}}
+
+\[ \quad \left(\forall x.\left(p(x) \lor q(x)\right) \Rightarrow \left(\exists y.p(y) \Rightarrow \left(p(x) \Rightarrow \forall y.p(y)\right)\right)\right) \] 
+
+This relational sentence is contingent as its truth depends on the specific interpretation of the predicates p and q. The left side, $\forall x.(p(x) \lor q(x))$, asserts that for every x, if either p(x) or q(x) (or both) are true, then the right side must be true. The right side, $\exists y.p(y) \Rightarrow (p(x) \Rightarrow \forall y.p(y))$, involves a conditional statement beginning with an existential quantifier, implying that if p(y) is true for some y and p(x) is true for our current x, then p(y) must be true for all y's. This statement is not universally valid as it might not hold in all interpretations, especially if p and q are unrelated, and it's not unsatisfiable, as there are interpretations where it could be true.
+
+\subsection*{\text{(c)}}
+
+\[ \quad \exists y.\left(p(y) \Rightarrow \exists x.q(x, y)\right) \Rightarrow \neg \exists x.q(y, x) \] 
+
+This sentence is unsatisfiable. It is not valid because whenever a $y$ exists such that $p(y)$ implies the existence of an $x$ such that $q(x,y)$ is true, but the right side can be interpreted as $ \forall y \forall x \neg q(y,x)$ and this interpretation contradicts what $p(y)$ implied in the left side. It is not contingent because it is not possible to find an interpretation where the right side does not contradict the left.
+
+
+% Prove the following sentence by modus ponens and the standard axiom schemata.
+% ∀x.(p(x) ⇒ q(x)), ¬∃z.r(z), ∃y.p(y) ∨ r(a), ¬∃z.r(z) ⇒ ∀z.(¬p(z)) ⊢ ∃z.q(z)
+% hint: you can also use mendelson’s corrolary of replacement.
+\section*{Answer 3}
+
+\[ \forall x.\left(p(x) \Rightarrow q(x)\right), \neg\exists z.r(z), \exists y.p(y) \lor r(a), \neg\exists z.r(z) \Rightarrow \forall z.\left(\neg r(z)\right) \vdash \exists z.q(z) \]
+
+\begin{align*}
+    1. \hspace{1em} & \forall x.\left(p(x) \Rightarrow q(x)\right)                                  & \text{Premise} \\
+    2. \hspace{1em} & \neg\exists z.r(z)                                                            & \text{Premise} \\
+    3. \hspace{1em} & \exists y.p(y) \lor r(a)                                                      & \text{Premise} \\
+    4. \hspace{1em} & \neg\exists z.r(z) \Rightarrow \forall z.\left(\neg r(z)\right)               & \text{Premise} \\
+    5. \hspace{1em} & \forall z.\left(\neg r(z)\right)                                              & \text{MP: 4, 2} \\
+    6. \hspace{1em} & \neg r(a)                                                                     & \text{UI: 5} \\
+    7. \hspace{1em} & \exists y.p(y)                                                                & \text{Disjunctive Syllogism: 6, 3} \\
+    8. \hspace{1em} & p(c)                                                                          & \text{EI: 7} \\
+    9. \hspace{1em} & p(c) \Rightarrow q(c)                                                         & \text{UI: 1} \\
+    10. \hspace{1em} & q(c)                                                                         & \text{MP: 9, 8} \\
+    11. \hspace{1em} & \exists z.q(z)                                                               & \text{EG: 10}
+\end{align*}
+
+\newpage
+
+% Prove the validity of the following sentence using resolution.
+% {∀y.A(a, y), ∀x.∀y.(A(x, y) ⇒ A(B(x),B(y)))} ⊢ ∃z.(A(a, z) ∧ A(z,B(B(a)))
+\section*{Answer 4}
+
+\[ \left\{\forall y.A(a, y), \forall x.\forall y.\left(A(x, y) \Rightarrow A(B(x),B(y))\right)\right\} \vdash \exists z.\left(A(a, z) \land A(z,B(B(a)))\right) \]
+
+\begin{align*}
+    1. \hspace{1em} & \{ A(a, y) \}                                                                 & \text{Premise} \\
+    2. \hspace{1em} & \{ \neg A(x,y), A(B(x), B(y)) \}                                              & \text{Premise} \\
+    3. \hspace{1em} & \{ \neg A(a,z), \neg A(z, B(B(a))) \}                                         & \text{Negated conclusion} \\
+    4. \hspace{1em} & \{ A(B(a), B(y)) \}                                                           & \text{1,2} \\
+    5. \hspace{1em} & \{ \neg A(a, B(a)) \}                                                         & \text{3,4} \\
+    6. \hspace{1em} & \{ \}                                                                         & \text{1,5} \\
+\end{align*}
+
+As we have reached the empty clause with the negated conclusion, these premises entails the conclusion. Hence, the sentence is valid. 
+
+
+
+
+
+
+
+
+
+\end{document}

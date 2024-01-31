@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[tableaux]{prooftrees}
+\renewcommand*\linenumberstyle[1]{(#1)}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{qtree}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name: Kaan Karaçanta \\
+
+ID: 2448546 \\
+
+
+\section*{Answer 1}
+
+\paragraph{a)} $ A \rightarrow B $ and $ \neg (A \wedge \neg B) $
+% give the truth table to show the equivalence here show A, B, not B, A -> B, A ^ not B, not (A ^ not B)
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        A & B & $\neg B$ & $ A \rightarrow B $ & $ (A \wedge \neg B) $ & $ \neg (A \wedge \neg B) $ \\ \hline
+        T & T & F        & T                   & F                     & T                          \\ \hline
+        T & F & T        & F                   & T                     & F                          \\ \hline
+        F & T & F        & T                   & F                     & T                          \\ \hline
+        F & F & T        & T                   & F                     & T                          \\ \hline
+    \end{tabular}
+
+    \caption{Truth Table for $ A \rightarrow B $ and $ \neg (A \wedge \neg B) $}
+    \label{t1}
+\end{table}
+
+The truth table shows that $ A \rightarrow B $ and $ \neg (A \wedge \neg B) $ are equivalent.
+
+\paragraph{b)} $ A \leftrightarrow B $ and $ (\neg A \vee B) \wedge (\neg B \vee A) $
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+        \hline
+        A & B & $\neg A$ & $\neg B$ & $ A \leftrightarrow B $ & $ (\neg A \vee B) $ & $ (\neg B \vee A) $ & $ (\neg A \vee B) \wedge (\neg B \vee A) $ \\ \hline
+        T & T & F        & F        & T                       & T                   & T                   & T                                          \\ \hline
+        T & F & F        & T        & F                       & F                   & T                   & F                                          \\ \hline
+        F & T & T        & F        & F                       & T                   & F                   & F                                          \\ \hline
+        F & F & T        & T        & T                       & T                   & T                   & T                                          \\ \hline
+    \end{tabular}
+
+    \caption{Truth Table for $ A \leftrightarrow B $ and $ (\neg A \vee B) \wedge (\neg B \vee A) $}
+    \label{t2}
+\end{table}
+
+The truth table shows that $ A \leftrightarrow B $ and $ (\neg A \vee B) \wedge (\neg B \vee A) $ are equivalent.
+
+\paragraph{c)} $ A \rightarrow (\neg A \rightarrow B) $ and $ 1 $
+% give the truth table to show the equivalence here show A, not A, B, not A -> B, A -> (not A -> B)
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        A & $\neg A$ & B & $ \neg A \rightarrow B $ & $ A \rightarrow (\neg A \rightarrow B) $ & $ 1 $ \\ \hline
+        T & F        & T & T                        & T                                        & T     \\ \hline
+        T & F        & F & T                        & T                                        & T     \\ \hline
+        F & T        & T & T                        & T                                        & T     \\ \hline
+        F & T        & F & F                        & T                                        & T     \\ \hline
+    \end{tabular}
+
+    \caption{Truth Table for $ A \rightarrow (\neg A \rightarrow B) $ and $ 1 $}
+    \label{t3}
+\end{table}
+
+The truth table shows that $ A \rightarrow (\neg A \rightarrow B) $ and $ 1 $ are equivalent.
+
+\newpage
+
+\paragraph{d)} $ (A \vee \neg B) \rightarrow C $ and $ (\neg A \wedge B) \vee C $
+% give the truth table to show the equivalence here show A, B, C, not A, not B, A v not B, not A ^ B, A v not B -> C, not A ^ B v C
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+        \hline
+        A & B & C & $\neg A$ & $\neg B$ & $ A \vee \neg B $ & $ \neg A \wedge B $ & $ (A \vee \neg B) \rightarrow C $ & $ (\neg A \wedge B) \vee C $ \\ \hline
+        T & T & T & F        & F        & T                 & F                   & T                                 & T                          \\ \hline
+        T & T & F & F        & F        & T                 & F                   & F                                 & F                          \\ \hline
+        T & F & T & F        & T        & T                 & F                   & T                                 & T                          \\ \hline
+        T & F & F & F        & T        & T                 & F                   & F                                 & F                          \\ \hline
+        F & T & T & T        & F        & F                 & T                   & T                                 & T                          \\ \hline
+        F & T & F & T        & F        & F                 & T                   & T                                 & T                          \\ \hline
+        F & F & T & T        & T        & T                 & F                   & T                                 & T                          \\ \hline
+        F & F & F & T        & T        & T                 & F                   & F                                 & F                          \\ \hline
+    \end{tabular}
+
+    \caption{Truth Table for $ (A \vee \neg B) \rightarrow C $ and $ (\neg A \wedge B) \vee C $}
+    \label{t4}
+\end{table}
+
+The truth table shows that $ (A \vee \neg B) \rightarrow C $ and $ (\neg A \wedge B) \vee C $ are equivalent.
+
+% convert logical forms to conjunctive normal form (CNF) in this question
+\section*{Answer 2}
+
+% A ∧ (¬A → A)
+\paragraph{a)} $ A \wedge (\neg A \rightarrow A) $
+
+\begin{align*}
+    A \wedge (\neg A \rightarrow A) & \equiv A \wedge (\neg \neg A \vee A) & \text{(a)} \\
+                                    & \equiv A \wedge (A \vee A)           & \text{(b)} \\
+                                    & \equiv A \wedge A                    & \text{(c)} \\
+                                    & \equiv A                             & \text{(d)} \\
+\end{align*}
+
+% (A → B) → ((A → ¬B) → ¬A)
+\paragraph{b)} $ (A \rightarrow B) \rightarrow ((A \rightarrow \neg B) \rightarrow \neg A) $
+
+\begin{align*}
+    (A \rightarrow B) \rightarrow ((A \rightarrow \neg B) \rightarrow \neg A)  & \equiv (\neg A \vee B) \rightarrow ((\neg A \vee \neg B) \rightarrow \neg A) & \text{(a)} \\
+                                                                               & \equiv (\neg A \vee B) \rightarrow (\neg (\neg A \vee \neg B) \vee \neg A)   & \text{(b)} \\
+                                                                               & \equiv (\neg A \vee B) \rightarrow ((A \wedge B) \vee \neg A)                & \text{(c)} \\
+                                                                               & \equiv (\neg A \vee B) \rightarrow ((A \vee \neg A) \wedge (B \vee \neg A))  & \text{(d)} \\
+                                                                               & \equiv (\neg A \vee B) \rightarrow (T \wedge (B \vee \neg A))                & \text{(e)} \\
+                                                                               & \equiv (\neg A \vee B) \rightarrow (B \vee \neg A)                           & \text{(f)} \\
+                                                                               & \equiv (\neg A \vee B) \rightarrow (\neg A \vee B)                           & \text{(g)} \\
+                                                                               & \equiv T                                                                     & \text{(h)} \\
+\end{align*}
+
+% (A → (B ∨ ¬C)) ∧ ¬A ∧ B
+\paragraph{c)} $ (A \rightarrow (B \vee \neg C)) \wedge \neg A \wedge B $
+
+\begin{align*}
+    (A \rightarrow (B \vee \neg C)) \wedge \neg A \wedge B & \equiv (\neg A \vee (B \vee \neg C)) \wedge \neg A \wedge B  & \text{(a)} \\
+                                                           & \equiv (\neg A \vee B \vee \neg C) \wedge \neg A \wedge B    & \text{(b)} \\
+\end{align*}
+
+% Construct a semantic tableaux (use only rules defined in section 4) to show that the following logical forms mutually consistent or not.
+% Semantic tableaux for this question:
+% 1. A ∧ B: it can be extended to form a new tableau by adding both A and B below to the branch
+% containing A ∧ B.
+% 2. A ∨ B: it can be extended to form a new tableau by adding two new branches, one containing A
+% and the other containing B.
+% 3. A → B: it can be extended to form a new tableau by adding two new branches, one containing ¬A
+% and the other containing B.
+% 4. A ↔ B: it can be extended to form a new tableau by adding two new branches, one containing
+% A ∧ B and the other containing ¬A ∧ ¬B.
+% 5. ¬¬A: it can be extended to form a new tableau by adding A below to the branch containing ¬¬A.
+% 6. ¬(A ∧ B): it can be extended to form a new tableau by adding two new branches, one containing
+% ¬A and the other containing ¬B.
+% 7. ¬(A∨B): it can be extended to form a new tableau by adding both ¬A and ¬B below to the branch
+% containing ¬(A ∨ B).
+% 8. ¬(A → B): it can be extended to form a new tableau by adding both A and ¬B below to the branch
+% containing A ∧ B.
+% 9. ¬(A ↔ B): it can be extended to form a new tableau by adding two new branches, one containing
+% A ∧ ¬B and the other containing ¬A ∧ B.
+% 10. Finally, and most importantly, whenever a logical form A and its negation ¬A appear in a branch
+% of a tableau, an inconsistency is indicated in that branch and it is said to be ’closed’, i.e. it is not
+% further extended. This is because A and ¬A cannot both be true at the same time.
+
+\section*{Answer 3}
+% the logical forms to be considered mutual consistance: ¬A ∧ B, ¬(B ∧ C), C ∨ D, ¬(¬A → D)  (use semantic tableaux)
+
+% $ \neg A \wedge B, \neg (B \wedge C), C \vee D, \neg (\neg A \rightarrow D) $ \\
+% write the semantic tableaux like below with writing (a), (b), (c), (d) for each line on the right side
+
+\begin{tableau}
+    {
+        line no sep= 1.5cm,
+        just sep= 1.5cm, % Set separation of justification
+        for tree={s sep'=10mm},
+        close with=\text{closed}
+    }
+    [\neg A \land B
+        [\neg (B \land C)
+            [C \lor D
+                [\neg (\neg A \rightarrow D)
+                    [\neg A, just={From (1)}
+                        [B, just={From (1)}
+                            [\neg A, just={From (4)}
+                                [\neg D, just={From (4)}
+                                    [C, just={Alternatives from (3)}
+                                        [\neg B, close, just={Alternatives from (2)}]
+                                        [\neg C, close]
+                                    ]
+                                    [D, close]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+]
+\end{tableau}
+
+This semantic tableaux shows that $ \neg A \wedge B, \neg (B \wedge C), C \vee D, \neg (\neg A \rightarrow D) $ are not mutually consistent.
+
+
+\end{document}

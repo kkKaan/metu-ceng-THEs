@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[tableaux]{prooftrees}
+\renewcommand*\linenumberstyle[1]{(#1)}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{qtree}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name: Kaan Karaçanta \\
+
+ID: 2448546 \\
+
+
+% 1. Suppose that you are given the following premises:
+% • p ∧ q ⇒ r
+% • q ∨ ¬q
+% • p
+% Show that the sentence r is logically entailed by the supplied premises.
+
+\section*{Answer 1}
+% Use truth table method to show that the sentence r is logically entailed by the supplied premises.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        $p$ & $q$ & $r$ & $ (p \wedge q) \rightarrow r  $ & $ q \vee \neg q $ \\ \hline
+        T   & T   & T   & T                               & T                 \\ \hline
+        T   & T   & F   & F                               & T                 \\ \hline
+        T   & F   & T   & T                               & T                 \\ \hline
+        T   & F   & F   & T                               & T                 \\ \hline
+        F   & T   & T   & T                               & T                 \\ \hline
+        F   & T   & F   & T                               & T                 \\ \hline
+        F   & F   & T   & T                               & T                 \\ \hline
+        F   & F   & F   & T                               & T                 \\ \hline
+    \end{tabular}
+
+    \caption{Truth table for the given premises and the conclusion}
+    \label{t1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        $p$ & $q$ & $r$ & $ (p \wedge q) \rightarrow r  $ & $ q \vee \neg q $ \\ \hline
+        T   & T   & T   & T                               & T                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        T   & F   & T   & T                               & T                 \\ \hline
+        T   & F   & F   & T                               & T                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+    \end{tabular} 
+
+    \caption{Table with the eliminated rows that do not satisfy premises}
+    \label{t2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        $p$ & $q$ & $r$ & $ (p \wedge q) \rightarrow r  $ & $ q \vee \neg q $ \\ \hline
+        T   & T   & T   & T                               & T                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        T   & F   & T   & T                               & T                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        F   & T   & T   & T                               & T                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+        F   & F   & T   & T                               & T                 \\ \hline
+        X   & X   & X   & X                               & X                 \\ \hline
+    \end{tabular}
+
+    \caption{Table with the eliminated rows that do not satisfy the conclusion}
+    \label{t3}
+\end{table}
+
+Since the set of the remaining rows in the Table 2 is not a subset of the remaining rows in the Table 3, $r$ is not logically entailed by the supplied premises.
+
+% Give a proof of ((p ⇒ ¬r) ⇒ ¬p) from the premises below using Modus Ponens and the standard
+% axiom schemata.
+% p ⇒ q, q ⇒ r
+\section*{Answer 2}
+
+\begin{align*}
+    & 1. \hspace{1em} p \Rightarrow q                                                                                    & \text{Premise} \\
+    & 2. \hspace{1em} q \Rightarrow r                                                                                    & \text{Premise} \\
+    & 3. \hspace{1em} (q \Rightarrow r) \Rightarrow (p \Rightarrow (q \Rightarrow r))                                    & \text{II} \\
+    & 4. \hspace{1em} p \Rightarrow (q \Rightarrow r)                                                                    & \text{Modus Ponens: 3, 2} \\
+    & 5. \hspace{1em} (p \Rightarrow (q \Rightarrow r)) \Rightarrow ((p \Rightarrow q) \Rightarrow (p \Rightarrow r))    & \text{ID} \\
+    & 6. \hspace{1em} (p \Rightarrow q) \Rightarrow (p \Rightarrow r)                                                    & \text{Modus Ponens: 5, 4} \\
+    & 7. \hspace{1em} p \Rightarrow r                                                                                    & \text{Modus Ponens: 6, 1} \\
+    & 8. \hspace{1em} (p \Rightarrow r) \Rightarrow ((p \Rightarrow \neg r) \Rightarrow \neg p)                          & \text{CR} \\
+    & 9. \hspace{1em} (p \Rightarrow \neg r) \Rightarrow \neg p                                                          & \text{Modus Ponens: 8, 7} \\
+\end{align*}
+
+
+% Give a proof of the sentence p from the single premise ¬¬p using only Modus Ponens and the
+% standard axiom schemata.
+\section*{Answer 3}
+
+\begin{align*}
+    & 1. \hspace{1em} \neg\neg p                                                                                                                                                                            & \text{Premise} \\
+    & 2. \hspace{1em} (\neg p \Rightarrow \neg p) \Rightarrow ((\neg p \Rightarrow \neg \neg p) \Rightarrow p)                                                                                              & \text{CR} \\
+    & 3. \hspace{1em} \neg p \Rightarrow ((\neg p \Rightarrow \neg p) \Rightarrow \neg p)                                                                                                                   & \text{II} \\
+    & 4. \hspace{1em} \neg p \Rightarrow (\neg p \Rightarrow \neg p)                                                                                                                                        & \text{II} \\
+    & 5. \hspace{1em} (\neg p \Rightarrow ((\neg p \Rightarrow \neg p) \Rightarrow \neg p)) \Rightarrow ((\neg p \Rightarrow (\neg p \Rightarrow \neg p)) \Rightarrow (\neg p \Rightarrow \neg p))          & \text{ID} \\
+    & 6. \hspace{1em} (\neg p \Rightarrow (\neg p \Rightarrow \neg p)) \Rightarrow (\neg p \Rightarrow \neg p)                                                                                              & \text{Modus Ponens: 5, 3} \\
+    & 7. \hspace{1em} \neg p \Rightarrow \neg p                                                                                                                                                           & \text{Modus Ponens: 6, 4} \\
+    & 8. \hspace{1em} (\neg p \Rightarrow \neg \neg p) \Rightarrow p                                                                                                                                      & \text{Modus Ponens: 7, 2} \\  
+    & 9. \hspace{1em} \neg \neg p \Rightarrow (\neg p \Rightarrow \neg \neg p)                                                                                                                              & \text{II} \\
+    & 10. \hspace{1em} \neg p \Rightarrow \neg \neg p                                                                                                                                                       & \text{Modus Ponens: 9, 1} \\
+    & 11. \hspace{1em} p                                                                                                                                                                                    & \text{Modus Ponens: 10, 8} \\                                                                                      
+\end{align*}
+
+
+% Use propositional resolution to prove the following sentence is valid:
+% (p ∨ q ⇒ r) ⇒ (p ⇒ (q ⇒ r))
+\section*{Answer 4}
+
+% \begin{align*}
+%     & \hspace{2em} (p \vee q \Rightarrow r) \Rightarrow (p \Rightarrow (q \Rightarrow r)) \\
+%     & \text{I} \hspace{1em} \neg (\neg (p \vee q) \vee r) \vee (\neg p \vee (\neg q \vee r)) \\
+%     & \hspace{2em} \neg (\neg (p \vee q) \vee r) \vee (\neg p \vee (\neg q \vee r)) \\
+%     & \text{N} \hspace{1em} (\neg \neg (p \vee q) \wedge \neg r) \vee (\neg p \vee (\neg q \vee r)) \\
+%     & \hspace{2em} ((p \vee q) \wedge \neg r) \vee (\neg p \vee (\neg q \vee r)) \\
+%     & \text{D} \hspace{1em} ((p \vee q) \wedge \neg r) \vee (\neg p \vee \neg q \vee r) \\
+%     & \hspace{2em} ((p \vee q) \vee (\neg p \vee \neg q \vee r)) \wedge (\neg r \vee (\neg p \vee \neg q \vee r)) \\
+%     & \hspace{2em} (p \vee q \vee \neg p \vee \neg q \vee r) \wedge (\neg r \vee \neg p \vee \neg q \vee r) \\
+%     & \text{O} \hspace{1em} \{p, q, \neg p, \neg q, r\} \\
+%     & \hspace{2em} \{\neg r, \neg p, \neg q, r\} \\
+% \end{align*}
+
+% Since there are literals that are complementary to each other in the same clause, the sentence is valid.
+
+\begin{align*}
+    & \hspace{2em} \neg ((p \vee q \Rightarrow r) \Rightarrow (p \Rightarrow (q \Rightarrow r))) \\
+    & \text{I} \hspace{1em} \neg (\neg (\neg (p \vee q) \vee r) \vee (\neg p \vee (\neg q \vee r))) \\
+    & \text{N} \hspace{1em} \neg (\neg \neg (p \vee q) \wedge \neg r) \wedge \neg (\neg p \vee (\neg q \vee r)) \\
+    & \hspace{2em} ((\neg p \wedge \neg q) \vee r) \wedge (p \wedge (q \wedge \neg r)) \\
+    & \text{D} \hspace{1em} ((\neg p \vee r) \wedge (\neg q \vee r)) \wedge (p \wedge (q \wedge \neg r)) \\
+    & \hspace{2em} (\neg p \vee r) \wedge (\neg q \vee r) \wedge p \wedge q \wedge \neg r \\
+    & \text{O} \hspace{1em} \{\neg p, r\} \\
+    & \hspace{2em} \{\neg q, r\} \\
+    & \hspace{2em} \{p\} \\
+    & \hspace{2em} \{q\} \\
+    & \hspace{2em} \{r\} \\
+    & \hspace{2em} \{\neg r\} \\
+    & \hspace{2em} \{\}
+\end{align*}
+
+Here, we showed the negative of the given sentence is unsatisfiable. Thus, the sentence is valid.
+
+\newpage
+
+% Use DPLL algorithm to show that the set of clauses: 
+% ¬p ∨ q ∨ s, p ∨ s ∨ t, p ∨ s ∨ ¬t, p ∨ s ∨ t, p ∨ ¬s ∨ ¬t, p ∨ ¬s ∨ t, p ∨ q ∨ ¬s, p ∨ ¬q ∨ s
+% is satisfiable or not
+\section*{Answer 5}
+
+The set of clauses is:
+
+\begin{align*}
+    &(\neg p \vee q \vee s) \\
+    &(p \vee s \vee t) \\
+    &(p \vee s \vee \neg t) \\
+    &(p \vee \neg s \vee \neg t) \\
+    &(p \vee \neg s \vee t) \\
+    &(p \vee q \vee \neg s) \\
+    &(p \vee \neg q \vee s)
+\end{align*}
+
+In this set of clauses there are neither tautological clauses nor clauses with pure literals. So, we can not simplify the set of clauses. We can not find a unit clause either. So, we have to choose a literal to assign. Let's choose $p$.
+
+After assigning T to $p$, we have:
+\begin{align*}
+    &(\neg T \vee q \vee s) \\
+    &(T \vee s \vee t) \\
+    &(T \vee s \vee \neg t) \\
+    &(T \vee \neg s \vee \neg t) \\
+    &(T \vee \neg s \vee t) \\
+    &(T \vee q \vee \neg s) \\
+    &(T \vee \neg q \vee s) \\
+\end{align*}
+
+Now, after eliminating tautological clauses, and removing $\neg T$ from the first clause as it does not have any effect, we have:
+$$ q \vee s $$
+
+After assigning T to $q$ or $s$, it can be seen that this set of clauses are satisfiable.
+
+\end{document}
