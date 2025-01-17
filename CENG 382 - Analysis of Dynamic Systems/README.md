@@ -1,0 +1,1 @@
+This course's homeworks are hosted in a separate repository. Check it out [here](https://github.com/kkKaan/dynamic-systems-homeworks).

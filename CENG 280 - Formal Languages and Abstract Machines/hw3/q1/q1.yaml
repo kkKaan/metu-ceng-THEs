@@ -1,0 +1,43 @@
+name: q1
+source code: |-
+
+  input: '100011'
+  blank: ' '
+  start state: A
+  table:
+
+    A:
+      0      : {write: ' ', R: B}
+
+    B:
+      0      : {write: 0, R}
+      1      : {write: 1, R}
+      ' '    : {write: ' ', L: C}
+      
+    C:
+      1      : {write: ' ', L: D}
+      
+    D:
+      0      : {write: 0, L}
+      1      : {write: 1, L}
+      ' '    : {write: ' ', R: E}
+      
+    E:
+      0      : {write: ' ', R: B}
+      ' '    : {write: ' ', R: accept}
+      
+    accept:
+    
+    
+    
+    
+    
+    
+    
+positions:
+  A: {x: 581.03, y: 394.46}
+  B: {x: 477.95, y: 298.18}
+  C: {x: 475.57, y: 154.88, fixed: false}
+  D: {x: 333.6, y: 152.82}
+  E: {x: 332.74, y: 296.32, fixed: false}
+  accept: {x: 201.41, y: 375.3}

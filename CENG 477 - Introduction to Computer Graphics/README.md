@@ -1,0 +1,1 @@
+This course's homeworks are hosted in separate repositories. You can find homework 2 [here](https://github.com/kkKaan/rasterizer-ceng477-hw2), and homework 3 [here](https://github.com/kkKaan/programmable-shaders-ceng477-hw3).

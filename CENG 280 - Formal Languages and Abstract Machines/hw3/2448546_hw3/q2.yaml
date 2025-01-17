@@ -1,0 +1,71 @@
+name: q2
+source code: |-
+  input: '00111'
+  blank: ' '
+  start state: A
+  table:
+
+    A:
+      0      : {write: S, R: B}
+      1      : {write: S, R: C}
+
+    B:
+      0      : {write: 0, R}
+      1      : {write: 0, R: C}
+      ' '    : {write: 0, L: D}
+      
+    C:
+      0      : {write: 1, R: B}
+      1      : {write: 1, R}
+      ' '    : {write: 1, L: D}
+      
+    D:
+      0      : {write: 0, L}
+      1      : {write: 1, L}
+      S      : {write: S, R: E}
+      
+    E:
+      0      : {write: 0, R}
+      1      : {write: 1, R}
+      ' '    : {write: ' ', L: F}
+      
+    F:
+      0      : {write: a, R: G}
+      1      : {write: b, R: H}
+      a      : {write: a, L}
+      b      : {write: b, L}
+      S      : {write: ' ', R: I}
+    
+    G:
+      a      : {write: a, R}
+      b      : {write: b, R}
+      ' '    : {write: a, L: F}
+      
+    H:
+      a      : {write: a, R}
+      b      : {write: b, R}
+      ' '    : {write: b, L: F}
+      
+    I:
+      a      : {write: 0, R}
+      b      : {write: 1, R}
+      ' '    : {write: ' ', L: accept}
+
+    accept:
+    
+    
+    
+    
+    
+    
+positions:
+  A: {x: 642.52, y: 433.02}
+  B: {x: 337.84, y: 352.04}
+  C: {x: 409.45, y: 480}
+  D: {x: 145.37, y: 426.76}
+  E: {x: 45.39, y: 293.89}
+  F: {x: 501.06, y: 272.63}
+  G: {x: 155.39, y: 81.35}
+  H: {x: 403.89, y: 97.26}
+  I: {x: 688.58, y: 316.86}
+  accept: {x: 759.1, y: 68.76}
