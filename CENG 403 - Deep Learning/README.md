@@ -1,4 +1,4 @@
-This course's homeworks aree hosted in seperate repositories.
+This course's homeworks are hosted in seperate repositories.
 
 * [Homework 1](https://github.com/kkKaan/tensor-library-dl-hw1)
 * [Homework 2](https://github.com/kkKaan/a-deep-learning-library-implementation)
